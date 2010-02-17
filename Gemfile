@@ -11,3 +11,7 @@ gem "httparty",             "0.5.2"
 gem "authlogic",	          "2.1.3"
 gem "authlogic-oauth",      "1.0.8",                   :require => "authlogic_oauth"
 gem "right_aws"
+
+group :development do
+ gem "rack-environment"
+end
