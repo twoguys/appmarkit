@@ -19,6 +19,13 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
+  config.gem "will_paginate",        :version => "2.3.12"
+  config.gem "liquid",               :version => "2.0.0"
+  config.gem "subdomain-fu",         :version => "0.5.4"
+  config.gem "paperclip",            :version => "2.3.1.1"
+  config.gem "httparty",             :version => "0.5.2"
+  config.gem "authlogic",	           :version => "2.1.3"
+  config.gem "authlogic-oauth",      :version => "1.0.8",                   :lib => "authlogic_oauth"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

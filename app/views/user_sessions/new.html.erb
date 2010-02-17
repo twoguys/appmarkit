@@ -1,4 +1,4 @@
-<% title "New User Session" %>
+<h1>New User Session</h1>
 
 <% form_for @user_session do |f| %>
   <%= f.error_messages %>
@@ -6,7 +6,11 @@
     <%= f.label :email %><br />
     <%= f.text_field :email %>
   </p>
-  <p><%= f.submit "Submit" %></p>
+  <p>
+    <%= f.label :password %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit "Sign In" %></p>
 <% end %>
 
 

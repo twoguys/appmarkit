@@ -1,3 +1,6 @@
 log/*.log
 tmp/**/*
 config/database.yml
+vendor/bundler_gems
+tmp/restart.txt
+db/*.sqlite3
