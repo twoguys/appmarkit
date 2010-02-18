@@ -1,4 +1,8 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :links
+
+  map.resources :screenshots
+
 
   map.resources     :domains
   map.resources     :user_sessions
@@ -7,7 +11,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources     :apps do |app|
     app.resources :features,    :only => [:create, :destroy]
     app.resources :domains,     :only => [:create, :destroy]
-    #app.resources :screenshots, :only => [:create, :destroy]
+    app.resources :screenshots, :only => [:create, :destroy]
+    app.resources :links,       :only => [:create, :destroy]
   end
 
   map.signin        "signin",  :controller => "user_sessions", :action => "new"

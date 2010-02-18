@@ -1,6 +1,8 @@
 class App < ActiveRecord::Base
-  belongs_to :user
-  has_many :domains
+  belongs_to  :user
+  has_many    :domains
+  has_many    :features
+  has_many    :screesnhots
   
   validates_presence_of   :name
   

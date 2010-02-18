@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218013040) do
+ActiveRecord::Schema.define(:version => 20100218015251) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -48,6 +48,29 @@ ActiveRecord::Schema.define(:version => 20100218013040) do
   end
 
   add_index "features", ["app_id"], :name => "index_features_on_app_id"
+
+  create_table "links", :force => true do |t|
+    t.string   "title"
+    t.string   "url"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "links", ["app_id"], :name => "index_links_on_app_id"
+
+  create_table "screenshots", :force => true do |t|
+    t.string   "image_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+    t.integer  "position"
+    t.integer  "app_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "screenshots", ["app_id"], :name => "index_screenshots_on_app_id"
 
   create_table "users", :force => true do |t|
     t.string   "email"
