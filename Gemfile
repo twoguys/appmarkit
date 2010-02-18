@@ -9,6 +9,7 @@ gem "subdomain-fu",         "0.5.4"
 gem "paperclip",            "2.3.1.1"
 gem "httparty",             "0.5.2"
 gem "authlogic",	          "2.1.3"
+gem "acts-as-list",					"0.1.2",									 :require => "acts_as_list"
 gem "authlogic-oauth",      "1.0.8",                   :require => "authlogic_oauth"
 gem "right_aws"
 

@@ -11,6 +11,9 @@ class App < ActiveRecord::Base
   validates_exclusion_of  :subdomain, :in => %w( www admin )
   validates_format_of     :subdomain, :with => /^[a-z0-9-]+$/
   
+  has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
   def to_param
     "#{id} #{name}".slugify
   end
