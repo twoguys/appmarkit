@@ -6,6 +6,10 @@ class AppsController < ApplicationController
     @apps = current_user.apps
   end
   
+  def show
+    @app = current_user.apps.find(params[:id], :include => :domains)
+  end
+  
   def new
     @app = current_user.apps.new
   end
