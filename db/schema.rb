@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218015251) do
+ActiveRecord::Schema.define(:version => 20100218015703) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(:version => 20100218015251) do
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   add_index "features", ["app_id"], :name => "index_features_on_app_id"
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(:version => 20100218015251) do
     t.integer  "app_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "position"
   end
 
   add_index "links", ["app_id"], :name => "index_links_on_app_id"
