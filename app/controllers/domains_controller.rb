@@ -7,7 +7,7 @@ class DomainsController < ApplicationController
     if @domain.save
       flash[:notice] = "Domain added"
     else
-      flash[:error] => "Error creating domain"
+      flash[:error] = "Error creating domain"
     end
     redirect_to @app
   end
