@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     if @link.save
       flash[:notice] = "Link added"
     else
-      flash[:error] => "Error creating link"
+      flash[:error] = "Error creating link"
     end
     redirect_to @app
   end
