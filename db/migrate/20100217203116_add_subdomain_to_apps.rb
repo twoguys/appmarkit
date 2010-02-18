@@ -4,13 +4,13 @@ class AddSubdomainToApps < ActiveRecord::Migration
     
     #add_index :apps, :domain
     #add_index :apps, :subdomain
-    add_index :apps, [:domain, :subdomain]
+    #add_index :apps, [:domain, :subdomain]
   end
 
   def self.down
     #remove_index :apps, :domain
     #remove_index :apps, :subdomain
-    remove_index :apps, [:domain, :subdomain]
+    #remove_index :apps, [:domain, :subdomain]
     
     remove_column :apps, :subdomain
   end
