@@ -1,5 +1,6 @@
 class UserSessionsController < ApplicationController
   def new
+    nav(:signin)
     @user_session = UserSession.new
   end
   

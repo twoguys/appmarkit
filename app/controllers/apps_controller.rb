@@ -1,5 +1,5 @@
 class AppsController < ApplicationController
-  
+  before_filter {|c| c.nav(:apps)}
   before_filter :login_required
   
   def index
