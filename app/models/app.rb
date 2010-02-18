@@ -10,4 +10,8 @@ class App < ActiveRecord::Base
   validates_uniqueness_of :subdomain
   validates_exclusion_of  :subdomain, :in => %w( www admin )
   validates_format_of     :subdomain, :with => /^[a-z0-9-]+$/
+  
+  def to_param
+    "#{id} #{name}".slugify
+  end
 end
