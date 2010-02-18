@@ -8,6 +8,10 @@ class PagesController < ApplicationController
     nav(:home)
   end
   
+  def more
+    nav(:more)
+  end
+  
   def show
     redirect_to welcome_path and return if params[:page].blank?
     render params[:page]
