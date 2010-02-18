@@ -1,8 +1,4 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :links
-
-  map.resources :screenshots
-
 
   map.resources     :domains
   map.resources     :user_sessions

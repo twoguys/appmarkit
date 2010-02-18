@@ -7,7 +7,7 @@ class ScreenshotsController < ApplicationController
     if @screenshot.save
       flash[:notice] = "Screenshot added"
     else
-      flash[:error] => "Error creating screenshot"
+      flash[:error] = "Error creating screenshot"
     end
     redirect_to @app
   end
