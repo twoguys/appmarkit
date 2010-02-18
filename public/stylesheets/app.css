@@ -402,3 +402,4 @@ small, .small, input.small { font-size: 0.88em; }
 ul.lined li { border-bottom: 1px solid #ddd; padding: 8px 0; }
 ul.lined li:last-child { border: none; }
 .twitter-icon { float: left; padding: 0 5px 0; }
+textarea.theme { width: 800px; height: 400px;}

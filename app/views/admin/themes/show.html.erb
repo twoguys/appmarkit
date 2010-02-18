@@ -1,0 +1,7 @@
+<h1><%= @theme.name %></h1>
+
+<% form_for ['admin', @theme] do |f| %>
+	<%= f.text_area :template, :class => 'theme' %>
+	<br />
+	<%= f.submit "Update" %>
+<%- end -%>

@@ -17,7 +17,7 @@ class App < ActiveRecord::Base
   has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
-  liquid_methods :name, :domains
+  liquid_methods :name, :subtitle, :description, :author, :logo, :icon, :domains, :features, :links
   
   def to_param
     "#{id} #{name}".slugify
