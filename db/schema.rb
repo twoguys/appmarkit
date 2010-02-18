@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218023759) do
+ActiveRecord::Schema.define(:version => 20100218234705) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(:version => 20100218023759) do
     t.integer  "icon_file_size"
     t.datetime "icon_updated_at"
     t.integer  "theme_id"
+    t.string   "google_analytics_id"
   end
 
   create_table "domains", :force => true do |t|
