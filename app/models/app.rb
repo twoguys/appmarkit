@@ -1,8 +1,9 @@
 class App < ActiveRecord::Base
   belongs_to  :user
   has_many    :domains
-  has_many    :features
-  has_many    :screesnhots
+  has_many    :features,    :order => "position"
+  has_many    :screesnhots, :order => "position"
+  has_many    :links,       :order => "position"
   
   validates_presence_of   :name
   
