@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100218015703) do
+ActiveRecord::Schema.define(:version => 20100218022040) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -74,6 +74,13 @@ ActiveRecord::Schema.define(:version => 20100218015703) do
 
   add_index "screenshots", ["app_id"], :name => "index_screenshots_on_app_id"
 
+  create_table "themes", :force => true do |t|
+    t.string   "name"
+    t.text     "template"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
   create_table "users", :force => true do |t|
     t.string   "email"
     t.string   "crypted_password"
@@ -83,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20100218015703) do
     t.integer  "failed_login_count"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "admin",              :default => false
   end
 
 end

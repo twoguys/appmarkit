@@ -1,0 +1,4 @@
+<h1>Themes</h1>
+<% for theme in @themes %>
+	<%= link_to theme.name, ['admin', theme] %><br />
+<%- end -%>

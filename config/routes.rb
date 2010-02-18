@@ -17,6 +17,11 @@ ActionController::Routing::Routes.draw do |map|
   
   map.pages         ':page',  :controller => 'pages',         :action => 'show',    :page => //
   map.welcome       'welcome', :controller => 'pages', :action => 'welcome'
+  
+  map.namespace :admin do |admin|
+    admin.map '',   :controller => 'dashboard'
+    admin.resources :themes
+  end
     
   map.root          :controller => 'sites'
 end
