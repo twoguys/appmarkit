@@ -5,16 +5,15 @@ module SubdomainTools
   end
   
   def current_app
-    opts = { :include => [:links, :domains, :features, :theme] }
-    @app ||= App.find_by_subdomain(current_subdomain, opts) || Domain.find_by_name(current_domain, opts).try(:app)
+    opts = [:links, :domains, :features, :theme]
+    @app ||= App.find_by_subdomain(current_subdomain, :include => opts) || Domain.find_by_name(current_domain, :include => { :app => opts }).try(:app)
   end  
 
   def app_required  
-    if current_app || !(current_domain =~ /heroku\.com/)
+    if current_app
       return true
-    else
-      flash[:error] = "Could not find the app '#{current_subdomain}'"   
-      redirect_to welcome_url(:subdomain => false) and return false
+    else  
+      redirect_to welcome_url(:subdomain => nil, :host => ENV['HOST_URL']) and return false
     end
   end  
   
