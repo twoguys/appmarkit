@@ -7,7 +7,7 @@ class FeaturesController < ApplicationController
     if @feature.save
       flash[:notice] = "Feature added"
     else
-      flash[:error] => "Error creating feature"
+      flash[:error] = "Error creating feature"
     end
     redirect_to @app
   end
