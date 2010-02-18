@@ -16,3 +16,7 @@ group :development do
 	gem "rack-environment"
 	gem "sqlite3-ruby"
 end
+
+group :production do
+	gem "pg"
+end
