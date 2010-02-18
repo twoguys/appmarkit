@@ -18,7 +18,7 @@ module SubdomainTools
       return true
     else
       flash[:error] = "Could not find the app '#{current_subdomain}'"   
-      redirect_to pages_url('welcome', :subdomain => false) and return false
+      redirect_to welcome_url(:subdomain => false) and return false
     end
   end  
   

@@ -11,4 +11,10 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password
   
+  # used to highlight current pages in the navigation
+  @nav = :none
+  def nav(sym)
+    @nav = sym
+  end
+  
 end

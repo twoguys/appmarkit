@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   def new
+    nav(:signup)
     @user = User.new
   end
   
