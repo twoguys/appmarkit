@@ -1,1 +1,3 @@
 Site for <%= @app.name %>
+
+<%= Liquid::Template.parse(@app.theme.template).render 'app' => @app %>

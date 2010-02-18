@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signout       "signout", :controller => "user_sessions", :action => "destroy"
   map.signup        "signup",  :controller => "users",        :action => "new"
   
-  map.pages         ':page',  :controller => 'pages',         :action => 'show',    :page => //
+  #map.pages         ':page',  :controller => 'pages',         :action => 'show',    :page => //
   map.welcome       'welcome', :controller => 'pages', :action => 'welcome'
   
   map.namespace :admin do |admin|
