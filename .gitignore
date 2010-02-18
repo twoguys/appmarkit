@@ -5,3 +5,4 @@ vendor/bundler_gems
 tmp/restart.txt
 db/*.sqlite3
 config/environment.yml
+.rake_tasks
