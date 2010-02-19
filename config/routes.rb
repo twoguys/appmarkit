@@ -13,9 +13,10 @@ ActionController::Routing::Routes.draw do |map|
     app.resources :links,       :only => [:create, :destroy]
   end
 
-  map.signin        "signin",  :controller => "user_sessions", :action => "new"
-  map.signout       "signout", :controller => "user_sessions", :action => "destroy"
-  map.signup        "signup",  :controller => "users",        :action => "new"
+  map.itunes        'itunes',  :controller => 'sites',          :action => 'itunes'
+  map.signin        "signin",  :controller => "user_sessions",  :action => "new"
+  map.signout       "signout", :controller => "user_sessions",  :action => "destroy"
+  map.signup        "signup",  :controller => "users",          :action => "new"
   
   #map.pages         ':page',  :controller => 'pages',         :action => 'show',    :page => //
   map.welcome       'welcome', :controller => 'pages', :action => 'welcome'

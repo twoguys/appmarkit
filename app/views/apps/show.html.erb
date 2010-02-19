@@ -1,5 +1,7 @@
 <h1><%= @app.name %></h1>
 <%= link_to "Preview Site", preview_app_path(@app) %>
+<h2>iTunes Link</h2>
+<%= link_to itunes_path %>
 <h2>Domains</h2>
 <% for domain in @app.domains %>
 	<%= domain.name %><br />
