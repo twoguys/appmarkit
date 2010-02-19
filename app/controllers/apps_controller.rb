@@ -32,8 +32,8 @@ class AppsController < ApplicationController
     if params[:app]
       name = params[:app][:name]
       @app = App.new(:name => name)
-      #@apps = ItunesStore.find_app(name)
-      @apps = [Struct.new(:name, :artist_name).new("Nezumi" "Marshall Huss")]
+      @apps = ItunesStore.find_app(name)
+      #@apps = [Struct.new(:name, :artist_name).new("Nezumi" "Marshall Huss")]
     end
   end
   

@@ -9,15 +9,17 @@
 <h2>Select your app...</h2>
 	<table>
 		<tr>
+			<td>Icon</td>
 			<td>App</td>
 			<td>Author</td>
 			<td>Is it yours?</td>
 		</tr>
 		<% for app in @apps %>
 		<tr>
-			<td><%= app.name %></td>
+			<td><%= image_tag app.artwork_url60 %></td>
+			<td><%= app.track_name %></td>
 			<td><%= app.artist_name %></td>
-			<td><%= link_to "Mine", new_app_path(:name => app.name, :description => app.artist_name) %></td>
+			<td><%= link_to "Mine", new_app_path(:name => app.track_name, :description => app.artist_name) %></td>
 		</tr>
 		<%- end -%>
 	</table>
