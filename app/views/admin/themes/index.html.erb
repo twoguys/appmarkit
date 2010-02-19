@@ -1,4 +1,8 @@
 <h1>Themes</h1>
+<%= render :partial => 'admin/dashboard/nav' %>
+
+<%= link_to "New Theme", new_admin_theme_path %><br /><br />
+
 <% for theme in @themes %>
 	<%= link_to theme.name, ['admin', theme] %><br />
 <%- end -%>

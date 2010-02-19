@@ -4,7 +4,9 @@ ActionController::Routing::Routes.draw do |map|
   map.resources     :user_sessions
   map.resources     :users
   
-  map.resources     :apps do |app|
+  map.resources     :apps, 
+    :collection => { :search => :any },
+    :member     => { :preview => :get } do |app|
     app.resources :features,    :only => [:create, :destroy]
     app.resources :domains,     :only => [:create, :destroy]
     app.resources :screenshots, :only => [:create, :destroy]
@@ -23,6 +25,7 @@ ActionController::Routing::Routes.draw do |map|
     admin.map '',   :controller => 'dashboard'
     admin.resources :themes
   end
+  map.admin 'admin', :controller => 'admin/dashboard', :action => 'index'
     
   map.root          :controller => 'sites'
 end

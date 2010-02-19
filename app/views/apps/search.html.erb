@@ -1,0 +1,28 @@
+<h1>New App</h1>
+
+<h2>Enter the name of you iPhone app in the App Store</h2>
+<% form_for :app, :url => search_apps_path do |f| %>
+	<%= f.text_field :name %> <%= f.submit 'Search' %>
+<%- end -%>
+
+<% if @apps %>
+<h2>Select your app...</h2>
+	<table>
+		<tr>
+			<td>App</td>
+			<td>Author</td>
+			<td>Is it yours?</td>
+		</tr>
+		<% for app in @apps %>
+		<tr>
+			<td><%= app.name %></td>
+			<td><%= app.artist_name %></td>
+			<td><%= link_to "Mine", new_app_path(:name => app.name, :description => app.artist_name) %></td>
+		</tr>
+		<%- end -%>
+	</table>
+<%- end -%>
+
+
+<br /><br />
+<%= link_to "Skip this step...", new_app_path %>

@@ -1,0 +1,10 @@
+<h1>New Theme</h1>
+<%= link_to "back", admin_themes_path %>
+
+<% form_for ['admin', @theme] do |f| %>
+ 	Name: <%= f.text_field :name %><br />
+	Template:<br />
+	<%= f.text_area :template, :class => 'theme' %>
+	<br />
+	<%= f.submit 'Save Theme' %>
+<%- end -%>

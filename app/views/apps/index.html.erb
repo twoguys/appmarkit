@@ -1,6 +1,6 @@
 <h1>Apps</h1>
 
-<%= link_to "New App", new_app_path %><br /><br />
+<%= link_to "New App", search_apps_path %><br /><br />
 
 <% for app in @apps %>
 	<%= link_to app.name, app %><br />
