@@ -1,6 +1,6 @@
 <h1>New App</h1>
 
-<h2>Enter the name of you iPhone app in the App Store</h2>
+<h2>Enter the name of your iPhone app in the App Store</h2>
 <% form_for :app, :url => search_apps_path do |f| %>
 	<%= f.text_field :name %> <%= f.submit 'Search' %>
 <%- end -%>
