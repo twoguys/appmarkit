@@ -19,7 +19,7 @@
 			<td><%= image_tag app.artwork_url60 %></td>
 			<td><%= app.track_name %></td>
 			<td><%= app.artist_name %></td>
-			<td><%= link_to "Mine", new_app_path(:name => app.track_name, :description => app.artist_name) %></td>
+			<td><%= link_to "Mine", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first) %></td>
 		</tr>
 		<%- end -%>
 	</table>

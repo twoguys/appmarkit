@@ -22,4 +22,12 @@ class App < ActiveRecord::Base
   def to_param
     "#{id} #{name}".slugify
   end
+  
+  def from_itunes(itunes)
+    self.name             = itunes.track_name
+    self.description      = itunes.description
+    self.subdomain        = self.name.slugify
+    self.itunes_url       = itunes.track_view_url
+  end
+  
 end

@@ -13,8 +13,10 @@ class AppsController < ApplicationController
   def new
     @app = current_user.apps.new
     
-    @app.name         = params[:name]
-    @app.description  = params[:description]
+    if params[:id]
+      @itunes = ItunesStore.find_app(params[:id]).first
+      @app.from_itunes(@itunes) if @itunes
+    end
   end
   
   def create
@@ -32,7 +34,7 @@ class AppsController < ApplicationController
     if params[:app]
       name = params[:app][:name]
       @app = App.new(:name => name)
-      @apps = ItunesStore.find_app(name)
+      @apps = ItunesStore.find_apps(name)
       #@apps = [Struct.new(:name, :artist_name).new("Nezumi" "Marshall Huss")]
     end
   end
