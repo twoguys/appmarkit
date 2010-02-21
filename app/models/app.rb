@@ -26,6 +26,7 @@ class App < ActiveRecord::Base
   end
   
   def from_itunes(itunes)
+    self.itunes_id          = itunes.track_view_url.scan(/id(\d+)/).first.first
     self.name               = itunes.track_name
     self.description        = itunes.description
     self.subdomain          = self.name.slugify
@@ -34,11 +35,13 @@ class App < ActiveRecord::Base
     self.large_artwork_url  = itunes.artwork_url100
     self.screenshots        = itunes.screenshot_urls
   end
+  
   def from_itunes_minimal(itunes)
-    self.itunes_url       = itunes.track_view_url
-    self.small_artwork_url = itunes.artwork_url60
-    self.large_artwork_url = itunes.artwork_url100
-    self.screenshots      = itunes.screenshot_urls
+    self.itunes_id          = itunes.track_view_url.scan(/id(\d+)/).first.first
+    self.itunes_url         = itunes.track_view_url
+    self.small_artwork_url  = itunes.artwork_url60
+    self.large_artwork_url  = itunes.artwork_url100
+    self.screenshots        = itunes.screenshot_urls
   end
   
   def affiliate_url
