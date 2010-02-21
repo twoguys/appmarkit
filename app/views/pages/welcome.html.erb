@@ -1,7 +1,8 @@
 <div class="centered">
 	<%= image_tag('/images/splash.png') %>
 	<div class="mt20">
-		<%= link_to('', signup_path, :id => 'signup-button') unless current_user %>
+		<h2>You can search for your app right now,</h2>
+		<%= link_to('', search_apps_path, :id => 'signup-button') %>
 		<%= link_to('or find out more...', more_path, :class => 'medium block mt10') %>
 	</div>
 </div>

@@ -1,5 +1,9 @@
-<%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
-<h1>Adding a new app</h1>
+<% if current_user %>
+	<%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
+	<h1>Adding a new app</h1>
+<% else %>
+	<h1>Search apps</h1>
+<% end %>
 
 <div class="light-grey-background p10 mb20">
 	<h2 class="border-bottom"><strong>Step 1: Search</strong> the iTunes App Store for your app</h2>
@@ -25,7 +29,10 @@
 			</tr>
 			<% for app in @apps %>
 			<tr>
-				<td><%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') %></td>
+				<td>
+					<%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') if current_user %>
+					<%= link_to("Sign up to claim this app", signup_path) if !current_user %>
+				</td>
 				<td><%= image_tag app.artwork_url60 %></td>
 				<td><%= app.track_name %></td>
 				<td><%= app.artist_name %></td>
@@ -37,3 +44,11 @@
 <%- end -%>
 
 <%#= link_to "Skip this step...", new_app_path %>
+
+<% content_for :head do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#app_name').focus();
+	});
+</script>
+<% end %>

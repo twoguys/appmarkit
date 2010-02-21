@@ -1,6 +1,6 @@
 class AppsController < ApplicationController
   before_filter {|c| c.nav(:apps)}
-  before_filter :login_required, :except => :demo
+  before_filter :login_required, :except => [:search, :demo]
   
   def index
     @apps = current_user.apps
