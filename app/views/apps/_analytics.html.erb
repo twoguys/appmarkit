@@ -1,0 +1,45 @@
+<div class="light-grey-background p10 mb20">
+	<h2 class="analytics mb10">Analytics</h2>
+	<% if @app.google_analytics_id %>
+		<div class="mb10">
+			<strong>Analytics ID:</strong> <%= @app.google_analytics_id %>
+			<%= link_to('Change', '#', :class => 'analytics-configure-link') %>
+		</div>
+
+		<strong>iTunes Link:</strong> <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
+		<div class="small weak">		
+			Give this out to folks as a link to get to your app on the iTunes App Store.<br/>
+			When someone visits this link we will send information to Google Analytics and then
+			immediately send them to your app's Apple iTunes store page.
+		</div>
+	<% else %>
+		You have not configured analytics yet.
+		<%= link_to('Configure analytics', '#', :class => 'analytics-configure-link') %>
+	<% end %>
+	
+	
+	<div id="analytics-form" style="display:none;">
+		<% form_for @app do |form| %>
+			<%= form.label(:google_analytics_id, "Google Analytics ID") %>
+			<%= form.text_field(:google_analytics_id) %>
+			<%= form.submit "Save", :class => 'button' %>
+		<% end %>
+		
+		<div class="mt10">
+			<div class="strong">Not sure what Google Analytics is?</div>
+			Find out more and signup at <%= link_to('http://www.google.com/analytics/', 'http://www.google.com/analytics/') %>.<br/>
+			Once you've signed up and created an analytics account for your iPhone app,
+			come back here and tell us your Google Analytics ID for that account.<br/><br/>
+			To find your ID, log into Analytics, click the link for your app, and next
+			to its name will be its ID. Here is an example:<br/>
+			<%= image_tag('/images/analytics-screenshot.png') %>
+		</div>
+	</div>
+</div>
+
+
+<script type="text/javascript">
+	$('.analytics-configure-link').click(function() {
+		$('#analytics-form').slideDown();
+	});
+</script>

@@ -1,10 +1,24 @@
+<%= image_tag(@app.small_artwork_url, :class => 'top-right') if @app.small_artwork_url %>
+
 <%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
 <h1><%= @app.name %></h1>
 
+<%= render 'apps/analytics' %>
 
-<%= image_tag(@app.small_artwork_url, :class => 'left mr15') if @app.small_artwork_url %>
-<%= link_to("Preview Site", preview_app_path(@app), :class => 'icon') %>
-<%= link_to("iTunes Link", itunes_url(@app.itunes_url_opts), :class => 'icon') %>
+<div class="light-grey-background p10 mb20">
+	<h2 class="homepage mb10">Homepage</h2>
+	<div class="mb10">
+		Want to setup a homepage for your app to show it off?
+	</div>
+	<%= link_to("Edit your app's info", edit_app_path(@app)) %><br/>
+	<%= link_to('Choose a theme', '') %>
+	<%#= link_to("Preview Site", preview_app_path(@app)) %>
+</div>
 
-<h2 class="pt10 clear">Domain</h2>
-<%= @app.domain %>
+<div class="light-grey-background p10">
+	<h2 class="domains mb10">Domains</h2>
+	<div class="mb10">
+		Do you already have a domain name? You can point it at your appmark.it homepage!
+	</div>
+	<%= @app.domain %>
+</div>

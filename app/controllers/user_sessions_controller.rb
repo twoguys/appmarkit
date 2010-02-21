@@ -8,7 +8,11 @@ class UserSessionsController < ApplicationController
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
       #flash[:notice] = "Successfully signed in"
-      redirect_to apps_path
+      if !params[:redirect_to].blank?
+        redirect_to params[:redirect_to]
+      else
+        redirect_to apps_path
+      end
     else
       render :action => 'new'
     end

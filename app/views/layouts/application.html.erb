@@ -4,7 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
-  <title>AppMark.it</title>
+  <title>appmark.it</title>
 	<link rel="shortcut icon" href="<%= root_path() %>favicon.gif" />
 	<%= javascript_include_tag 'jquery-1.4.1.min' %>	
 	<%= javascript_include_tag 'application' %>
@@ -37,10 +37,11 @@
 						<li class="<%= @nav == :more ? "active" : "" %>">
 							<%= link_to('more', more_path) %>
 						</li>
-						<% if current_user %>
 						<li class="<%= @nav == :apps ? "active" : "" %>">
-							<%= link_to("my apps", apps_path) %>
+							<%= link_to("apps", apps_path) if current_user %>
+							<%= link_to("apps", search_apps_path) if !current_user %>
 						</li>
+						<% if current_user %>
 						<% if current_user.admin? %>
 						<li>
 							<%= link_to('admin', admin_path) %>

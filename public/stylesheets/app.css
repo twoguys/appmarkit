@@ -31,7 +31,7 @@ img { border: medium none; }
 textarea { padding: 5px; }
 p { font-family: georgia, helvetica, arial, sans-serif; line-height: 1.5em; margin: 0 0 10px 0; }
 form p { padding-bottom: 10px; }
-label { display: block; margin: 5px 10px 5px 0; padding-top: 2px; font-weight: bold; }
+label { display: block; margin: 5px 10px 5px 0; padding-top: 2px; }
 label.normal { font-size: 100%; }
 input[type="submit"] { cursor: pointer; }
 input[type="text"], input[type="password"], input[type="file"], textarea {
@@ -60,7 +60,6 @@ input.button { font-size: 14px; border: none; }
   background: #fff url(../images/button-overlay.png) repeat-x;
   display: inline-block;
   padding: 6px 17px 8px;
-  margin: 5px 0;
   color: #000;
   text-decoration: none;
   line-height: 1;
@@ -165,12 +164,19 @@ a.button { text-decoration: none; font-size: 1.1em; }
 #signup-button:hover { background-position: 0 0; }
 #signup-button:active { top: 1px; }
 
+/* Apps */
+li.app { height: 59px; border: 1px solid #ddd; padding: 5px; background-color: #eee; }
+li.app img { float: left; height: 59px; margin: 0 10px 0 0; }
+li.app .name { height: 59px; line-height: 59px; vertical-align: middle; display: block; float: left; overflow: hidden; font-size: 1.3em; }
+.analytics { background: transparent url(../images/chart_line.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
+.homepage { background: transparent url(../images/home.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
+.domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
+
 /* Forms */
 .input_info { font-size: 11px; display: block; color: #555; margin-bottom: 2px; }
 .text_field, .password_field { margin-bottom: 10px; }
 .inline_form { position: absolute; margin-left: 4px; }
 .buttons { margin-top: 10px; }
-
 
 /* Pagination */
 div.pagination { text-align: center; height: 20px; padding: 10px; }
@@ -306,6 +312,7 @@ table.styled tr:hover td { background-color: #d8e8ef; }
 .ml10 { margin-left: 10px; }
 .ml15 { margin-left: 15px; }
 .mr15 { margin-right: 15px; }
+.mauto { margin-left: auto; margin-right: auto; }
 .p0 { padding: 0; }
 .p5 { padding: 5px; }
 .p10 { padding: 10px; }
@@ -317,8 +324,8 @@ table.styled tr:hover td { background-color: #d8e8ef; }
 .pl20 { padding-left: 20px; }
 .pl5 { padding-left: 5px; }
 .pr20 { padding-right: 20px; }
-.w300 { width: 300px; }
 .w200 { width: 200px; }
+.w300 { width: 300px; }
 .w400 { width: 400px; }
 .w600 { width: 600px; }
 .w800 { width: 800px; }
@@ -342,7 +349,7 @@ pre.prettyprint { border: none; }
 .inline { display: inline; }
 ul.hoverable li:hover .hidden { visibility: visible; }
 .relative { position: relative; }
-.top-right { position: absolute; top: 10px; right: 10px; }
+.top-right { position: absolute; top: 0; right: 20px; }
 .big { font-size: 2em; }
 .very-big { font-size: 3em;}
 .medium { font-size: 1.2em; line-height: 1.4em; }
@@ -402,7 +409,7 @@ small, .small, input.small { font-size: 0.88em; }
   border: none;
 }
 .hint {
-  background: #ddd url(../images/icons/lightbulb.png) no-repeat 4px 6px;
+  background: #eee url(../images/icons/lightbulb.png) no-repeat 4px 6px;
   padding: 6px 8px 6px 24px;
   -moz-border-radius: 6px;
   -webkit-border-radius: 6px;
