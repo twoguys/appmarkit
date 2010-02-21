@@ -15,12 +15,15 @@ class AppsController < ApplicationController
     
     if params[:id]
       @itunes = ItunesStore.find(params[:id])
+      @itunes_id = params[:id]
       @app.from_itunes(@itunes) if @itunes
     end
   end
   
   def create
     @app = current_user.apps.new(params[:app])
+    @itunes = ItunesStore.find(params[:itunes_id])
+    @app.from_itunes_minimal(@itunes)
     if @app.save
       flash[:notice] = "App created"
       redirect_to @app

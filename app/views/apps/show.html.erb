@@ -10,8 +10,12 @@
 	<div class="mb10">
 		Want to setup a homepage for your app to show it off?
 	</div>
-	<%= link_to("Edit your app's info", edit_app_path(@app)) %><br/>
-	<%= link_to('Choose a theme', '') %>
+	<div>
+		1. Make sure your app's info is correct. <%= link_to("Edit info", edit_app_path(@app)) %>
+	</div>
+	<div>
+		2. <%= link_to('Choose a theme', '') %>
+	</div>
 	<%#= link_to("Preview Site", preview_app_path(@app)) %>
 </div>
 

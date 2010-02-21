@@ -21,14 +21,15 @@
 		<%= f.text_area :description, :class => 'tall' %>
 	</div>
 
-	<%= f.hidden_field :itunes_url %>
-	<%= f.hidden_field :small_artwork_url %>
-	<%= f.hidden_field :large_artwork_url %>
-	<%= f.hidden_field :screenshots %>
-
+	<%= hidden_field_tag(:itunes_id, @itunes_id) %>
+	
   <div>
-		<%= f.submit("Create app", :class => 'button') %>
-		or <%= link_to('search again', search_apps_path) %>
+		<%= f.submit("Save", :class => 'button') %>
+		<% if @app.new_record? %>
+			or <%= link_to('search again', search_apps_path) %>
+		<% else %>
+			or <%= link_to('Cancel', @app) %>
+		<% end %>
 	</div>
 <% end %>
 </div>
