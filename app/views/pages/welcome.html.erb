@@ -1,8 +1,25 @@
 <div class="centered">
 	<%= image_tag('/images/splash.png') %>
-	<div class="mt20">
-		<h2>You can search for your app right now,</h2>
-		<%= link_to('', search_apps_path, :id => 'signup-button') %>
-		<%= link_to('or find out more...', more_path, :class => 'medium block mt10') %>
+</div>
+<div class="mt20">
+	<div class="centered">
+		<h2>Have an app in the iTunes store?</h2>
+	</div>
+	<div class="w400 mauto mt10">
+		<div class="small weak centered">Search by app name or author name</div>
+		<% form_for :app, :url => search_apps_path do |f| %>
+			<%#= f.label :name, "Search by app name or author name" %>
+			<%= f.text_field :name %>
+			<%= f.submit 'Search', :class => 'button' %>
+			or <%= link_to('find out more', more_path) %>
+		<%- end -%>
 	</div>
 </div>
+
+<% content_for :head do %>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$('#app_name').focus();
+	});
+</script>
+<% end %>

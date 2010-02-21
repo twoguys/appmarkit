@@ -30,6 +30,17 @@ class AppsController < ApplicationController
     end
   end
   
+  def edit
+    @app = current_user.apps.find(params[:id])
+    @itunes = ItunesStore.find(@app.id) if @app
+  end
+  
+  def update
+    @app = current_user.apps.find(params[:id])
+    @app.update_attributes(params[:app])
+    redirect_to @app
+  end
+  
   def search
     if params[:app]
       name = params[:app][:name]
@@ -53,5 +64,5 @@ class AppsController < ApplicationController
     @app.theme = Theme.first
     render :action => 'preview', :layout => false
   end
-
+  
 end

@@ -1,0 +1,5 @@
+<% form_for :app, :url => search_apps_path do |f| %>
+	<div class="small weak">Search by app name or author name</div>
+	<%= f.text_field :name %>
+	<%= f.submit 'Search', :class => 'button' %>
+<%- end -%>

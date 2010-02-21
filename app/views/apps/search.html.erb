@@ -2,21 +2,17 @@
 	<%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
 	<h1>Adding a new app</h1>
 <% else %>
-	<h1>Search apps</h1>
+	<h1>Searching apps</h1>
 <% end %>
 
 <div class="light-grey-background p10 mb20">
-	<h2 class="border-bottom"><strong>Step 1: Search</strong> the iTunes App Store for your app</h2>
-	<% form_for :app, :url => search_apps_path do |f| %>
-		<%= f.label :name, "Search by app name or author name" %>
-		<%= f.text_field :name %>
-		<%= f.submit 'Search', :class => 'button' %>
-	<%- end -%>
+	<h2 class="border-bottom"><strong>Step 1: Search</strong> the iTunes Store for your app</h2>
+	<%= render 'apps/search_form' %>
 </div>
 
 <% if @apps %>
 <div class="light-grey-background p10">
-	<h2 class="border-bottom"><strong>Step 2: Select</strong> your app...</h2>
+	<h2 class="border-bottom"><strong>Step 2: Choose</strong> your app...</h2>
 	<% if @apps.empty? %>
 		No apps matched your search, please try a different search.
 	<% else %>
@@ -30,8 +26,11 @@
 			<% for app in @apps %>
 			<tr>
 				<td>
-					<%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') if current_user %>
-					<%= link_to("Sign up to claim this app", signup_path) if !current_user %>
+					<%= link_to("Choose", new_app_path(:id => strip_app_id(app.track_view_url)), :class => 'button') if current_user %>
+					<% if !current_user %>
+						<%= link_to("Sign up", signup_path(:redirect_to => new_app_path(:id => strip_app_id(app.track_view_url))), :class => 'button') %>
+						<div class="small">to claim this app</div>
+					<% end %>
 				</td>
 				<td><%= image_tag app.artwork_url60 %></td>
 				<td><%= app.track_name %></td>

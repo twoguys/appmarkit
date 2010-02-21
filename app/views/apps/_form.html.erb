@@ -2,7 +2,6 @@
 	<%= image_tag(@itunes.artwork_url60) %>
 </div>
 
-
 <div class="left w400 light-grey-background p10">
 <% form_for @app do |f| %>
   <%= f.error_messages %>
@@ -22,8 +21,9 @@
 		<%= f.text_area :description, :class => 'tall' %>
 	</div>
 
-	<%= f.hidden_field :itunes_url %>
-	<%= f.hidden_field :small_artwork_url, :value => @itunes.artwork_url60 %>
+	<%= f.hidden_field :itunes_url if @app.new_record? %>
+	<%= f.hidden_field :small_artwork_url, :value => @itunes.artwork_url60 if @app.new_record? %>
+	<%= f.hidden_field :large_artwork_url, :value => @itunes.artwork_url100 if @app.new_record? %>
 
   <div>
 		<%= f.submit("Create app", :class => 'button') %>

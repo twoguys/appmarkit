@@ -1,14 +1,8 @@
-<h1 class="mt20">My Apps</h1>
-
-<%= link_to "Search for and add an app", search_apps_path, :class => 'icon add' %>
+<%= link_to "Search for another app to add", search_apps_path, :class => 'icon search' %>
+<h1>My Apps</h1>
 
 <div class="mt10">
-	<table class="styled">
-		<tr>
-			<th>Icon</th>
-			<th>Name</th>
-			<th>Author</th>
-		</tr>
+	<ul class="apps">
 		<%= render @apps %>
-	</table>
+	</ul>
 </div>
