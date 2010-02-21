@@ -18,17 +18,17 @@
 	<% else %>
 		<table class="styled">
 			<tr>
+				<th></th>
 				<th>Icon</th>
 				<th>Name</th>
 				<th>Author</th>
-				<th></th>
 			</tr>
 			<% for app in @apps %>
 			<tr>
+				<td><%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') %></td>
 				<td><%= image_tag app.artwork_url60 %></td>
 				<td><%= app.track_name %></td>
 				<td><%= app.artist_name %></td>
-				<td><%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') %></td>
 			</tr>
 			<%- end -%>
 		</table>
