@@ -4,7 +4,7 @@
 
 <%= image_tag(@app.small_artwork_url, :class => 'left mr15') if @app.small_artwork_url %>
 <%= link_to("Preview Site", preview_app_path(@app), :class => 'icon') %>
-<%= link_to("iTunes Link", itunes_path, :class => 'icon') %>
+<%= link_to("iTunes Link", itunes_url(@app.itunes_url_opts), :class => 'icon') %>
 
 <h2 class="pt10 clear">Domains</h2>
 <% for domain in @app.domains %>
