@@ -19,7 +19,7 @@ class App < ActiveRecord::Base
   # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   serialize :screenshots
   
-  liquid_methods :name, :subtitle, :print_description, :author, :features, :links, :affiliate_url, :small_artwork_url, :screenshots
+  liquid_methods :name, :subtitle, :print_description, :author, :features, :links, :itunes_url_opts, :small_artwork_url, :screenshots
   
   def to_param
     "#{id} #{name}".slugify
@@ -42,6 +42,7 @@ class App < ActiveRecord::Base
     self.small_artwork_url  = itunes.artwork_url60
     self.large_artwork_url  = itunes.artwork_url100
     self.screenshots        = itunes.screenshot_urls
+    self.author             = itunes.artist_name
   end
   
   def affiliate_url

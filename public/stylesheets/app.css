@@ -163,6 +163,10 @@ li.app .name { height: 59px; line-height: 59px; vertical-align: middle; display:
 .homepage { background: transparent url(../images/home.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 .domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 
+/* Themes */
+li.theme { width: 200px; border: 1px solid #aaa; background-color: #eee; padding: 10px; }
+li.theme .name { font-size: 1.5em; padding-top: 10px; display: inline-block; }
+
 /* Forms */
 .input_info { font-size: 11px; display: block; color: #555; margin-bottom: 2px; }
 .text_field, .password_field { margin-bottom: 10px; }
@@ -350,9 +354,9 @@ small, .small, input.small { font-size: 0.88em; }
 .block { display: block; }
 .rounded { -moz-border-radius: 10px; -webkit-border-radius: 10px; }
 .dashed { border: 1px dashed #ccc; }
-.border-bottom { border-bottom: 1px dashed #ccc; margin-bottom: 10px; padding-bottom: 10px; }
-.border-top { border-top: 1px dashed #ccc; padding-top: 10px; margin-top: 10px; }
-.indented { margin-left:10px; margin-right: 10px; }
+.border-bottom { border-bottom: 1px dotted #ccc; margin-bottom: 10px; padding-bottom: 10px; }
+.border-top { border-top: 1px dotted #ccc; padding-top: 10px; margin-top: 10px; }
+.indented { margin-left: 15px; margin-right: 15px; }
 .rounded {
   border-radius: 8px;
   -moz-border-radius: 8px;

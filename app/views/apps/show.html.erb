@@ -5,22 +5,7 @@
 
 <%= render 'apps/analytics' %>
 
-<div class="light-grey-background p10 mb20">
-	<h2 class="homepage mb10">Homepage</h2>
-	<div class="mb10">
-		Want to setup a homepage for your app to show it off?
-	</div>
-	<div>
-		1. Make sure your app's info is correct. <%= link_to("Edit app info", edit_app_path(@app)) %>
-	</div>
-	<div>
-		2. Choose a theme to make it look nice. <%= link_to("Pick a theme", themes_app_path(@app)) %>
-	</div>
-	<div>
-		3. View your new homepage: <%= link_to(preview_app_url(@app)) %>
-	</div>
-	<%#= link_to("Preview Site", preview_app_path(@app)) %>
-</div>
+<%= render 'apps/homepage' %>
 
 <div class="light-grey-background p10">
 	<h2 class="domains mb10">Domain</h2>

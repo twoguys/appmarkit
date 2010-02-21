@@ -1,22 +1,30 @@
 <div class="light-grey-background p10 mb20">
 	<h2 class="analytics mb10">Analytics</h2>
+
+	<div class="mb10 border-bottom">
+		<strong>Your app's iTunes Link</strong>: <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
+		<div class="small weak mt5">
+			Give this out to folks, it will send them to your app on the iTunes App Store.<br/><br/>
+			If you've setup Google Analytics (just below), when someone visits your iTunes Link we will:<br/>
+			a) send Google Analytics information about the user and<br/>
+			b) immediately send them to your app on the iTunes App Store.
+		</div>
+	</div>
+
 	<% if @app.google_analytics_id %>
 		<div class="mb10">
 			<strong>Analytics ID:</strong> <%= @app.google_analytics_id %>
 			<%= link_to('Edit', '#', :class => 'analytics-configure-link') %>
-		</div>
-
-		<strong>iTunes Link:</strong> <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
-		<div class="small weak">		
-			Give this out to folks as a link to get to your app on the iTunes App Store.<br/>
-			When someone visits this link we will send information to Google Analytics and then
-			immediately send them to your app's Apple iTunes store page.
+			<div class="small weak mt5">
+				Awesome! When someone visits your iTunes Link (above), we will send Google Analytics their information.
+			</div>
 		</div>
 	<% else %>
-		You have not configured analytics yet.
-		<%= link_to('Edit', '#', :class => 'analytics-configure-link') %>
-	<% end %>
-	
+		<div class="mb10">
+			You have not configured analytics yet.
+			<%= link_to('Edit', '#', :class => 'analytics-configure-link') %>
+		</div>
+	<% end %>	
 	
 	<div id="analytics-form" style="display:none;">
 		<% form_for @app do |form| %>
@@ -44,6 +52,6 @@
 		$('.analytics-configure-link').text('Hide');
 	}, function() {
 		$('#analytics-form').slideUp();
-		$('.analytics-configure-link').text('Change');
+		$('.analytics-configure-link').text('Edit');
 	});
 </script>

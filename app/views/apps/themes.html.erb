@@ -4,3 +4,13 @@
 <ul class="themes">
 	<%= render @themes %>
 </ul>
+
+<% content_for :head do %>
+	<%= javascript_include_tag('jquery.lightbox-0.5.min') %>
+	<%= stylesheet_link_tag('jquery.lightbox-0.5') %>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('.theme .screenshot').lightBox();
+		});
+	</script>
+<% end %>

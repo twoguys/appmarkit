@@ -1,0 +1,27 @@
+<div class="light-grey-background p10 mb20">
+	<h2 class="homepage mb10">Homepage</h2>
+	<div class="mb10 strong">
+		Want to setup a homepage for your app to show it off?
+	</div>
+	<div class="border-bottom">
+		<strong>1.</strong> Make sure your app's info is correct. <%= link_to("Edit app info", edit_app_path(@app)) %>
+	</div>
+	<div class="border-bottom">
+		<% if @app.theme %>
+			<strong>2.</strong> You have chosen the <%= @app.theme.name %> theme. 
+			<%= link_to("Choose a different theme", themes_app_path(@app)) %>
+			<div class="indented mt5">
+				<%= image_tag(@app.theme.screenshot_url) %>
+			</div>
+		<% else %>
+			<strong>2.</strong> Choose a theme to make your homepage look sexy.
+			<div class="indented">
+				<%= link_to("Pick a theme", themes_app_path(@app)) %>
+			</div>
+		<% end %>
+	</div>
+	<div>
+		<strong>3.</strong> Give out a link to your homepage: (need helper for subdomain link)
+	</div>
+	<%#= link_to("Preview Site", preview_app_path(@app)) %>
+</div>
