@@ -4,7 +4,6 @@ class App < ActiveRecord::Base
    
   has_many    :domains
   has_many    :features,    :order => "position"
-  has_many    :screesnhots, :order => "position"
   has_many    :links,       :order => "position"
   
   validates_presence_of   :name
