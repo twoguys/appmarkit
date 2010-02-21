@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100221014313) do
+ActiveRecord::Schema.define(:version => 20100221033007) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -20,18 +20,11 @@ ActiveRecord::Schema.define(:version => 20100221014313) do
     t.string   "subtitle"
     t.text     "description"
     t.string   "author"
-    t.string   "logo_file_name"
-    t.string   "logo_content_type"
-    t.integer  "logo_file_size"
-    t.datetime "logo_updated_at"
-    t.string   "icon_file_name"
-    t.string   "icon_content_type"
-    t.integer  "icon_file_size"
-    t.datetime "icon_updated_at"
     t.integer  "theme_id"
     t.string   "google_analytics_id"
     t.string   "itunes_url"
     t.string   "small_artwork_url"
+    t.text     "screenshots"
   end
 
   create_table "domains", :force => true do |t|
@@ -64,19 +57,6 @@ ActiveRecord::Schema.define(:version => 20100221014313) do
   end
 
   add_index "links", ["app_id"], :name => "index_links_on_app_id"
-
-  create_table "screenshots", :force => true do |t|
-    t.string   "image_file_name"
-    t.string   "avatar_content_type"
-    t.integer  "avatar_file_size"
-    t.datetime "avatar_updated_at"
-    t.integer  "position"
-    t.integer  "app_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "screenshots", ["app_id"], :name => "index_screenshots_on_app_id"
 
   create_table "themes", :force => true do |t|
     t.string   "name"

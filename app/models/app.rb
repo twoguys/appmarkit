@@ -15,6 +15,7 @@ class App < ActiveRecord::Base
   validates_format_of     :subdomain, :with => /^[a-z0-9-]+$/
   
   validates_presence_of   :itunes_url
+  validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
   
   has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
@@ -30,6 +31,7 @@ class App < ActiveRecord::Base
     self.description      = itunes.description
     self.subdomain        = self.name.slugify
     self.itunes_url       = itunes.track_view_url
+    self.screenshots      = itunes.screenshot_urls
   end
   
   def affiliate_url
@@ -37,11 +39,7 @@ class App < ActiveRecord::Base
   end
   
   def itunes_url_opts
-    if self.domains.empty?
-      { :subdomain => self.subdomain }
-    else
-      { :host => self.domains.first.name }
-    end
+    self.domains.empty? ? { :subdomain => self.subdomain } : { :host => self.domains.first.name }
   end
   
 end
