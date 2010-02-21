@@ -2,8 +2,8 @@ class App < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :theme
    
-  has_many    :features,    :order => "position"
-  has_many    :links,       :order => "position"
+  has_many    :features,    :order => "position",   :dependent => :destroy
+  has_many    :links,       :order => "position",   :dependent => :destroy
   
   validates_presence_of   :name
   
