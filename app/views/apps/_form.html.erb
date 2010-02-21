@@ -23,6 +23,7 @@
 	</div>
 
 	<%= f.hidden_field :itunes_url %>
+	<%= f.hidden_field :small_artwork_url, :value => @itunes.artwork_url60 %>
 
   <div>
 		<%= f.submit("Create app", :class => 'button') %>

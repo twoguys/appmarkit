@@ -1,3 +1,5 @@
-<li class="app">
-	<%= link_to(app.name, app) %>
-</li>
+<tr>
+	<td><%= link_to(image_tag(app.small_artwork_url), app) if app.small_artwork_url %></td>
+	<td><%= link_to(app.name, app) %></td>
+	<td><%= app.author %></td>
+</tr>
