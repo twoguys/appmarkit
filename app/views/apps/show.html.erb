@@ -20,7 +20,5 @@
 	<div class="mb10">
 		Do you already have a domain name? You can point it at your appmark.it homepage!
 	</div>
-	<% for domain in @app.domains %>
-		<%= domain.name %><br />
-	<%- end -%>
+	<%= @app.domain %>
 </div>

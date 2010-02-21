@@ -1,16 +1,18 @@
 ActionController::Routing::Routes.draw do |map|
 
-  map.resources     :domains
   map.resources     :user_sessions
   map.resources     :users
   
   map.resources     :apps, 
-    :collection => { :search => :any, :demo => :get },
-    :member     => { :preview => :get } do |app|
-    app.resources :features,    :only => [:create, :destroy]
-    app.resources :domains,     :only => [:create, :destroy]
-    app.resources :screenshots, :only => [:create, :destroy]
-    app.resources :links,       :only => [:create, :destroy]
+    :collection => { 
+      :search => :any, 
+      :demo => :get 
+    },
+    :member     => { 
+      :preview => :get 
+    } do |app|
+      app.resources :features,    :only => [:create, :destroy]
+      app.resources :links,       :only => [:create, :destroy]
   end
 
   map.itunes        'itunes',  :controller => 'sites',          :action => 'itunes'

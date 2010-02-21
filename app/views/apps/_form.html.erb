@@ -38,7 +38,7 @@
 	<%= image_tag(@itunes.artwork_url100, :class => 'large-artwork') %>
 	
 	<div class="mt10 mb10 strong">Screenshots</div>
-	<% for screenshot in @itunes.screenshot_urls %>
+	<% for screenshot in @app.screenshots %>
 		<%= image_tag(screenshot, :class => 'screenshot') %>
 	<%- end -%>
 </div>

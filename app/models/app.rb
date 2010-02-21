@@ -2,9 +2,7 @@ class App < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :theme
    
-  has_many    :domains
   has_many    :features,    :order => "position"
-  has_many    :screesnhots, :order => "position"
   has_many    :links,       :order => "position"
   
   validates_presence_of   :name
@@ -15,11 +13,12 @@ class App < ActiveRecord::Base
   validates_format_of     :subdomain, :with => /^[a-z0-9-]+$/
   
   validates_presence_of   :itunes_url
+  validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
   
-  has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
-  liquid_methods :name, :subtitle, :description, :author, :logo, :icon, :domains, :features, :links
+  liquid_methods :name, :subtitle, :description, :author, :features, :links
   
   def to_param
     "#{id} #{name}".slugify
@@ -30,6 +29,7 @@ class App < ActiveRecord::Base
     self.description      = itunes.description
     self.subdomain        = self.name.slugify
     self.itunes_url       = itunes.track_view_url
+    self.screenshots      = itunes.screenshot_urls
   end
   
   def affiliate_url
@@ -37,11 +37,7 @@ class App < ActiveRecord::Base
   end
   
   def itunes_url_opts
-    if self.domains.empty?
-      { :subdomain => self.subdomain }
-    else
-      { :host => self.domains.first.name }
-    end
+    self.domain.blank? ? { :subdomain => self.subdomain } : { :host => self.domain }
   end
   
 end
