@@ -32,7 +32,6 @@ class AppsController < ApplicationController
   
   def edit
     @app = current_user.apps.find(params[:id])
-    @itunes = ItunesStore.find(@app.id) if @app
   end
   
   def update

@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100221040844) do
+ActiveRecord::Schema.define(:version => 20100221061809) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(:version => 20100221040844) do
     t.string   "small_artwork_url"
     t.text     "screenshots"
     t.string   "domain"
+    t.string   "large_artwork_url"
   end
 
   create_table "features", :force => true do |t|

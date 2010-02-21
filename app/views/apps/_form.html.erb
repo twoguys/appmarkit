@@ -1,5 +1,5 @@
 <div class="left mr15 h100">
-	<%= image_tag(@itunes.artwork_url60) %>
+	<%= image_tag(@app.small_artwork_url) %>
 </div>
 
 <div class="left w400 light-grey-background p10">
@@ -21,9 +21,10 @@
 		<%= f.text_area :description, :class => 'tall' %>
 	</div>
 
-	<%= f.hidden_field :itunes_url if @app.new_record? %>
-	<%= f.hidden_field :small_artwork_url, :value => @itunes.artwork_url60 if @app.new_record? %>
-	<%= f.hidden_field :large_artwork_url, :value => @itunes.artwork_url100 if @app.new_record? %>
+	<%= f.hidden_field :itunes_url %>
+	<%= f.hidden_field :small_artwork_url %>
+	<%= f.hidden_field :large_artwork_url %>
+	<%= f.hidden_field :screenshots %>
 
   <div>
 		<%= f.submit("Create app", :class => 'button') %>
@@ -35,10 +36,12 @@
 
 <div class="w400 left light-grey-background p10 ml15">
 	<div class="mb10 strong">Artwork</div>
-	<%= image_tag(@itunes.artwork_url100, :class => 'large-artwork') %>
+	<%= image_tag(@app.large_artwork_url, :class => 'large-artwork') %>
 	
-	<div class="mt10 mb10 strong">Screenshots</div>
-	<% for screenshot in @app.screenshots %>
-		<%= image_tag(screenshot, :class => 'screenshot') %>
-	<%- end -%>
+	<% unless @app.screenshots.blank? %>
+		<div class="mt10 mb10 strong">Screenshots</div>
+		<% for screenshot in @app.screenshots %>
+			<%= image_tag(screenshot, :class => 'screenshot') %>
+		<% end %>
+	<% end %>
 </div>
