@@ -1,6 +1,7 @@
 class AppsController < ApplicationController
   before_filter {|c| c.nav(:apps)}
   before_filter :login_required, :except => [:search, :demo]
+  before_filter :find_app, :only => [:edit, :update, :themes, :preview]
   
   def index
     @apps = current_user.apps
@@ -34,11 +35,9 @@ class AppsController < ApplicationController
   end
   
   def edit
-    @app = current_user.apps.find(params[:id])
   end
   
   def update
-    @app = current_user.apps.find(params[:id])
     @app.update_attributes(params[:app])
     redirect_to @app
   end
@@ -52,8 +51,11 @@ class AppsController < ApplicationController
     end
   end
   
+  def themes
+    @themes = Theme.all
+  end
+  
   def preview
-    @app = current_user.apps.find(params[:id])
     render :layout => false
   end
   
@@ -66,5 +68,9 @@ class AppsController < ApplicationController
     @app.theme = Theme.first
     render :action => 'preview', :layout => false
   end
-  
+
+  private
+    def find_app
+      @app = current_user.apps.find(params[:id])
+    end
 end

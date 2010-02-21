@@ -26,7 +26,7 @@ class Admin::ThemesController < Admin::BaseController
   def update
     @theme = Theme.find(params[:id])
     if @theme.update_attributes(params[:theme])
-      flash[:notice] = "Theme created"
+      flash[:notice] = "Theme updated"
       redirect_to ['admin', @theme]
     else
       flash[:error] = "Error updating theme"

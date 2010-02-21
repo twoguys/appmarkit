@@ -1,7 +1,9 @@
-<h1><%= @theme.name %></h1>
-
 <% form_for ['admin', @theme] do |f| %>
+	<%= f.text_field :name %>
 	<%= f.text_area :template, :class => 'theme' %>
-	<br />
-	<%= f.submit "Update" %>
+	<%= f.text_field :screenshot_url %>
+	<div>
+		<%= f.submit "Update" %>
+		or <%= link_to('Cancel', admin_themes_path) %>
+	</div>
 <%- end -%>

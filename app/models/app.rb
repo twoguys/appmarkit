@@ -19,7 +19,7 @@ class App < ActiveRecord::Base
   # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   serialize :screenshots
   
-  liquid_methods :name, :subtitle, :description, :author, :features, :links
+  liquid_methods :name, :subtitle, :print_description, :author, :features, :links, :affiliate_url, :small_artwork_url, :screenshots
   
   def to_param
     "#{id} #{name}".slugify
@@ -50,6 +50,10 @@ class App < ActiveRecord::Base
   
   def itunes_url_opts
     self.domain.blank? ? { :subdomain => self.subdomain } : { :host => self.domain }
+  end
+  
+  def print_description
+    self.description.gsub(/\r\n/, "<br/>")
   end
   
 end

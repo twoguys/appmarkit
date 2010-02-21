@@ -9,7 +9,8 @@ ActionController::Routing::Routes.draw do |map|
       :demo => :get 
     },
     :member     => { 
-      :preview => :get 
+      :preview => :get,
+      :themes => :get
     } do |app|
       app.resources :features,    :only => [:create, :destroy]
       app.resources :links,       :only => [:create, :destroy]

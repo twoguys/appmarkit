@@ -11,10 +11,13 @@
 		Want to setup a homepage for your app to show it off?
 	</div>
 	<div>
-		1. Make sure your app's info is correct. <%= link_to("Edit", edit_app_path(@app)) %>
+		1. Make sure your app's info is correct. <%= link_to("Edit app info", edit_app_path(@app)) %>
 	</div>
 	<div>
-		2. Choose a theme to make it look nice. <%= link_to('Pick theme', '') %>
+		2. Choose a theme to make it look nice. <%= link_to("Pick a theme", themes_app_path(@app)) %>
+	</div>
+	<div>
+		3. View your new homepage: <%= link_to(preview_app_url(@app)) %>
 	</div>
 	<%#= link_to("Preview Site", preview_app_path(@app)) %>
 </div>
@@ -24,5 +27,6 @@
 	<div class="mb10">
 		Do you already have a domain name? You can point it at your appmark.it homepage!
 	</div>
+	coming soon...
 	<%= @app.domain %>
 </div>
