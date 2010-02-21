@@ -11,6 +11,7 @@
 			<strong>2.</strong> You have chosen the <%= @app.theme.name %> theme. 
 			<%= link_to("Choose a different theme", themes_app_path(@app)) %>
 			<div class="indented mt5">
+				<small class="block">Here is an example of the <%= @app.theme.name %> theme:</small>
 				<%= image_tag(@app.theme.screenshot_url) %>
 			</div>
 		<% else %>
@@ -20,8 +21,11 @@
 			</div>
 		<% end %>
 	</div>
+	<div class="border-bottom">
+		<strong>3.</strong> Customize your homepage (coming soon...)
+	</div>
 	<div>
-		<strong>3.</strong> Give out a link to your homepage: (need helper for subdomain link)
+		<strong>4.</strong> Give out a link to your homepage: (need helper for subdomain link)
 	</div>
 	<%#= link_to("Preview Site", preview_app_path(@app)) %>
 </div>
