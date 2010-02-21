@@ -1,6 +1,6 @@
 class AppsController < ApplicationController
   before_filter {|c| c.nav(:apps)}
-  before_filter :login_required
+  before_filter :login_required, :except => :demo
   
   def index
     @apps = current_user.apps
@@ -14,7 +14,7 @@ class AppsController < ApplicationController
     @app = current_user.apps.new
     
     if params[:id]
-      @itunes = ItunesStore.find_app(params[:id]).first
+      @itunes = ItunesStore.find(params[:id])
       @app.from_itunes(@itunes) if @itunes
     end
   end
@@ -34,7 +34,7 @@ class AppsController < ApplicationController
     if params[:app]
       name = params[:app][:name]
       @app = App.new(:name => name)
-      @apps = ItunesStore.find_apps(name)
+      @apps = ItunesStore.find(:all, :term => name)
       #@apps = [Struct.new(:name, :artist_name).new("Nezumi" "Marshall Huss")]
     end
   end
@@ -42,6 +42,16 @@ class AppsController < ApplicationController
   def preview
     @app = current_user.apps.find(params[:id])
     render :layout => false
+  end
+  
+  def demo
+    itunes_id = params[:app]
+    itunes = ItunesStore.find(itunes_id)
+    logger.info itunes.to_yaml
+    @app = App.new
+    @app.from_itunes(itunes)
+    @app.theme = Theme.first
+    render :action => 'preview', :layout => false
   end
 
 end
