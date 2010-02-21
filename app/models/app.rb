@@ -2,7 +2,6 @@ class App < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :theme
    
-  has_many    :domains
   has_many    :features,    :order => "position"
   has_many    :links,       :order => "position"
   
@@ -19,7 +18,7 @@ class App < ActiveRecord::Base
   # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
-  liquid_methods :name, :subtitle, :description, :author, :logo, :icon, :domains, :features, :links
+  liquid_methods :name, :subtitle, :description, :author, :features, :links
   
   def to_param
     "#{id} #{name}".slugify
@@ -38,7 +37,7 @@ class App < ActiveRecord::Base
   end
   
   def itunes_url_opts
-    self.domains.empty? ? { :subdomain => self.subdomain } : { :host => self.domains.first.name }
+    self.domain.blank? ? { :subdomain => self.subdomain } : { :host => self.domain }
   end
   
 end

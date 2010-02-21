@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100221033007) do
+ActiveRecord::Schema.define(:version => 20100221040844) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -25,17 +25,8 @@ ActiveRecord::Schema.define(:version => 20100221033007) do
     t.string   "itunes_url"
     t.string   "small_artwork_url"
     t.text     "screenshots"
+    t.string   "domain"
   end
-
-  create_table "domains", :force => true do |t|
-    t.string   "name",       :limit => 64
-    t.integer  "app_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "domains", ["app_id"], :name => "index_domains_on_app_id"
-  add_index "domains", ["name"], :name => "index_domains_on_name"
 
   create_table "features", :force => true do |t|
     t.string   "body"
