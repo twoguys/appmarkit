@@ -3,7 +3,7 @@
 	<% if @app.google_analytics_id %>
 		<div class="mb10">
 			<strong>Analytics ID:</strong> <%= @app.google_analytics_id %>
-			<%= link_to('Change', '#', :class => 'analytics-configure-link') %>
+			<%= link_to('Edit', '#', :class => 'analytics-configure-link') %>
 		</div>
 
 		<strong>iTunes Link:</strong> <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
@@ -14,7 +14,7 @@
 		</div>
 	<% else %>
 		You have not configured analytics yet.
-		<%= link_to('Configure analytics', '#', :class => 'analytics-configure-link') %>
+		<%= link_to('Edit', '#', :class => 'analytics-configure-link') %>
 	<% end %>
 	
 	
@@ -39,7 +39,11 @@
 
 
 <script type="text/javascript">
-	$('.analytics-configure-link').click(function() {
+	$('.analytics-configure-link').toggle(function() {
 		$('#analytics-form').slideDown();
+		$('.analytics-configure-link').text('Hide');
+	}, function() {
+		$('#analytics-form').slideUp();
+		$('.analytics-configure-link').text('Change');
 	});
 </script>

@@ -6,18 +6,18 @@ module ApplicationHelper
   
   def google_analytics(google_analytics_id)
     if google_analytics_id
-      "analytics goes here #{google_analytics_id}"
-      
-      #       <script type="text/javascript">
-      #   var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-      #   document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-      # </script>
-      # <script type="text/javascript">
-      #   try {
-      #     var pageTracker = _gat._getTracker("UA-12501037-1");
-      #     pageTracker._trackPageview();
-      #   } catch(err) {}
-      # </script>
+      <<-EOF
+      <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+      </script>
+      <script type="text/javascript">
+        try {
+          var pageTracker = _gat._getTracker("#{google_analytics_id}");
+          pageTracker._trackPageview();
+        } catch(err) {}
+      </script>
+      EOF
     end
   end
   

@@ -1,3 +1,13 @@
-<html><head><title></title></head><body>
-<%= google_analytics(@app.google_analytics_id) %>
+<html>
+	<head>
+		<title></title>
+		<%= javascript_include_tag('jquery-1.4.1.min') %>
+		<%= google_analytics(@app.google_analytics_id) %>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				window.location.replace("<%= @app.affiliate_url %>");
+			});
+		</script>
+	</head>
+<body>
 </body></html>	
