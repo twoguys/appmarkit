@@ -1,6 +1,6 @@
 <% form_for ['admin', @theme] do |f| %>
 	<%= f.text_field :name %>
-	<%= f.text_area :template, :class => 'theme' %>
+	<%= f.text_area :template, :class => 'theme', :disabled => true %>
 	<div>
 		<%= f.submit "Update" %>
 		or <%= link_to('Cancel', admin_themes_path) %>
