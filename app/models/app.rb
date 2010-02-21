@@ -26,13 +26,13 @@ class App < ActiveRecord::Base
   end
   
   def from_itunes(itunes)
-    self.name             = itunes.track_name
-    self.description      = itunes.description
-    self.subdomain        = self.name.slugify
-    self.itunes_url       = itunes.track_view_url
-    self.small_artwork_url = itunes.artwork_url60
-    self.large_artwork_url = itunes.artwork_url100
-    self.screenshots      = itunes.screenshot_urls
+    self.name               = itunes.track_name
+    self.description        = itunes.description
+    self.subdomain          = self.name.slugify
+    self.itunes_url         = itunes.track_view_url
+    self.small_artwork_url  = itunes.artwork_url60
+    self.large_artwork_url  = itunes.artwork_url100
+    self.screenshots        = itunes.screenshot_urls
   end
   
   def affiliate_url
