@@ -16,8 +16,8 @@ class App < ActiveRecord::Base
   validates_presence_of   :itunes_url
   validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
   
-  has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   
   liquid_methods :name, :subtitle, :description, :author, :logo, :icon, :domains, :features, :links
   

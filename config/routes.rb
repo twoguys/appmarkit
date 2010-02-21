@@ -9,7 +9,6 @@ ActionController::Routing::Routes.draw do |map|
     :member     => { :preview => :get } do |app|
     app.resources :features,    :only => [:create, :destroy]
     app.resources :domains,     :only => [:create, :destroy]
-    app.resources :screenshots, :only => [:create, :destroy]
     app.resources :links,       :only => [:create, :destroy]
   end
 
