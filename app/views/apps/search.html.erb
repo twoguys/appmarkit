@@ -1,30 +1,39 @@
-<h1>New App</h1>
+<%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
+<h1>Adding a new app</h1>
 
-<h2>Enter the name of your iPhone app in the App Store</h2>
-<% form_for :app, :url => search_apps_path do |f| %>
-	<%= f.text_field :name %> <%= f.submit 'Search' %>
-<%- end -%>
+<div class="light-grey-background p10 mb20">
+	<h2 class="border-bottom"><strong>Step 1: Search</strong> the iTunes App Store for your app</h2>
+	<% form_for :app, :url => search_apps_path do |f| %>
+		<%= f.label :name, "Search by app name or author name" %>
+		<%= f.text_field :name %>
+		<%= f.submit 'Search', :class => 'button' %>
+	<%- end -%>
+</div>
 
 <% if @apps %>
-<h2>Select your app...</h2>
-	<table>
-		<tr>
-			<td>Icon</td>
-			<td>App</td>
-			<td>Author</td>
-			<td>Is it yours?</td>
-		</tr>
-		<% for app in @apps %>
-		<tr>
-			<td><%= image_tag app.artwork_url60 %></td>
-			<td><%= app.track_name %></td>
-			<td><%= app.artist_name %></td>
-			<td><%= link_to "Mine", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first) %></td>
-		</tr>
-		<%- end -%>
-	</table>
+<div class="light-grey-background p10">
+	<h2 class="border-bottom"><strong>Step 2: Select</strong> your app...</h2>
+	<% if @apps.empty? %>
+		No apps matched your search, please try a different search.
+	<% else %>
+		<table class="styled">
+			<tr>
+				<th>Icon</th>
+				<th>Name</th>
+				<th>Author</th>
+				<th></th>
+			</tr>
+			<% for app in @apps %>
+			<tr>
+				<td><%= image_tag app.artwork_url60 %></td>
+				<td><%= app.track_name %></td>
+				<td><%= app.artist_name %></td>
+				<td><%= link_to("Claim", new_app_path(:id => app.track_view_url.scan(/id(\d+)/).first.first), :class => 'button') %></td>
+			</tr>
+			<%- end -%>
+		</table>
+	<% end %>
+</div>		
 <%- end -%>
 
-
-<br /><br />
-<%= link_to "Skip this step...", new_app_path %>
+<%#= link_to "Skip this step...", new_app_path %>

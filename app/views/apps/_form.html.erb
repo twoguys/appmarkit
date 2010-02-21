@@ -1,29 +1,43 @@
+<div class="left mr15 h100">
+	<%= image_tag(@itunes.artwork_url60) %>
+</div>
+
+
+<div class="left w400 light-grey-background p10">
 <% form_for @app do |f| %>
   <%= f.error_messages %>
-  <p>
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </p>
-	<p>
-		<%= image_tag @itunes.artwork_url100 %><br />
-		<%= image_tag @itunes.artwork_url60 %><br />
-	</p>
-  <p>
-    <%= f.label :subdomain %><br />
-    http://<%= f.text_field :subdomain %>.appmark.it
-  </p>
-  <p>
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </p>
 
-	<p>
-		Screenshots<br />
-		<% for screenshot in @itunes.screenshot_urls %>
-			<%= image_tag screenshot %>
-		<%- end -%>
-	</p>
+	<div class="border-bottom">
+		<%= f.label :name, 'Name', :class => 'mt0' %>
+	 	<%= f.text_field :name %>
+	</div>
+	
+	<div class="border-bottom">
+		<%= f.label :subdomain %>
+		http://<%= f.text_field :subdomain, :class => 'small skinny' %>.appmark.it
+	</div>
+
+	<div class="border-bottom">
+		<%= f.label :description %>
+		<%= f.text_area :description, :class => 'tall' %>
+	</div>
 
 	<%= f.hidden_field :itunes_url %>
-  <p><%= f.submit "Submit" %></p>
+
+  <div>
+		<%= f.submit("Create app", :class => 'button') %>
+		or <%= link_to('search again', search_apps_path) %>
+	</div>
 <% end %>
+</div>
+
+
+<div class="w400 left light-grey-background p10 ml15">
+	<div class="mb10 strong">Artwork</div>
+	<%= image_tag(@itunes.artwork_url100, :class => 'large-artwork') %>
+	
+	<div class="mt10 mb10 strong">Screenshots</div>
+	<% for screenshot in @itunes.screenshot_urls %>
+		<%= image_tag(screenshot, :class => 'screenshot') %>
+	<%- end -%>
+</div>
