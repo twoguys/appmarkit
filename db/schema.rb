@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100220034807) do
+ActiveRecord::Schema.define(:version => 20100221014313) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20100220034807) do
     t.integer  "theme_id"
     t.string   "google_analytics_id"
     t.string   "itunes_url"
+    t.string   "small_artwork_url"
   end
 
   create_table "domains", :force => true do |t|

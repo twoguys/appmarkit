@@ -1,8 +1,12 @@
+<%= link_to('Back to my apps', apps_path, :class => 'icon back') %>
 <h1><%= @app.name %></h1>
-<%= link_to "Preview Site", preview_app_path(@app) %>
-<h2>iTunes Link</h2>
-<%= link_to itunes_path %>
-<h2>Domains</h2>
+
+
+<%= image_tag(@app.small_artwork_url, :class => 'left mr15') if @app.small_artwork_url %>
+<%= link_to("Preview Site", preview_app_path(@app), :class => 'icon') %>
+<%= link_to("iTunes Link", itunes_path, :class => 'icon') %>
+
+<h2 class="pt10 clear">Domains</h2>
 <% for domain in @app.domains %>
 	<%= domain.name %><br />
 <%- end -%>

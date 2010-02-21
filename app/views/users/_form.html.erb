@@ -10,5 +10,8 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-  <div class="mt10"><%= f.submit "Submit" %></div>
+  <div class="mt10">
+		<%= f.submit "Submit" %>
+		<%= "or #{link_to('Cancel', welcome_path)}" if @user.new_record? %>
+	</div>
 <% end %>
