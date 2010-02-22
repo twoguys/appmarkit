@@ -5,7 +5,7 @@ module SubdomainTools
   end
   
   def current_app
-    opts = [:links, :features, :theme, :domains]
+    opts = [:links, :theme, :domains]
     @app ||= App.find_by_subdomain(current_subdomain, :include => opts) || Domain.find_by_name(current_domain, :include => { :app => opts }).try(:app)
   end  
 
