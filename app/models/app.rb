@@ -16,7 +16,7 @@ class App < ActiveRecord::Base
   validates_presence_of   :itunes_url
   validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
   
-  validates_presence_of   :theme_name
+  #validates_presence_of   :theme_name
   
   # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
