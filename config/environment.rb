@@ -14,7 +14,7 @@ Rails::Initializer.run do |config|
   # -- all .rb files in that directory are automatically loaded.
 
   # Add additional load paths for your own custom dirs
-  # config.load_paths += %W( #{RAILS_ROOT}/extras )
+  config.load_paths += %W( #{RAILS_ROOT}/app/observers )
 
   # Specify gems that this application depends on and have them installed with rake gems:install
   config.gem "will_paginate",        :version => "2.3.12"
@@ -23,6 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "paperclip",            :version => "2.3.1.1"
   config.gem "httparty",             :version => "0.5.2"
   config.gem "authlogic",            :version => "2.1.3"
+  config.gem "heroku",               :version => "1.8.0"
   config.gem "acts-as-list",         :version => "0.1.2",       :lib => "acts_as_list"
   config.gem "authlogic-oauth",      :version => "1.0.8",       :lib => "authlogic_oauth"
 
@@ -35,7 +36,8 @@ Rails::Initializer.run do |config|
   config.frameworks -= [ :active_resource ]
 
   # Activate observers that should always be running
-  # config.active_record.observers = :cacher, :garbage_collector, :forum_observer
+  # This is only in production
+  # config.active_record.observers = :domain_observer
 
   # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
   # Run "rake -D time" for a list of tasks for finding time zone names.

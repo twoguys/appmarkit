@@ -1,6 +1,6 @@
 class App < ActiveRecord::Base
   belongs_to  :user
-  belongs_to  :theme
+  belongs_to  :theme, :foreign_key => 'theme_name', :primary_key => 'name'
    
   has_many    :features,    :order => "position",   :dependent => :destroy
   has_many    :links,       :order => "position",   :dependent => :destroy
@@ -14,6 +14,8 @@ class App < ActiveRecord::Base
   
   validates_presence_of   :itunes_url
   validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
+  
+  validates_presence_of   :theme_name
   
   # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }

@@ -1,5 +1,5 @@
 class Theme < ActiveRecord::Base
-  has_many :apps
+  has_many :apps, :foreign_key => 'theme_name', :primary_key => 'name'
   
   validates_presence_of     :name
   validates_uniqueness_of   :name

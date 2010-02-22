@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-
+  
   map.resources     :user_sessions
   map.resources     :users
   
@@ -14,6 +14,7 @@ ActionController::Routing::Routes.draw do |map|
     } do |app|
       app.resources :features,    :only => [:create, :destroy]
       app.resources :links,       :only => [:create, :destroy]
+      app.resources :domains,     :only => [:create, :destroy]
   end
 
   map.itunes        'itunes',  :controller => 'sites',          :action => 'itunes'
