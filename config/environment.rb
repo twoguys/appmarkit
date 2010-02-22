@@ -25,7 +25,7 @@ Rails::Initializer.run do |config|
   config.gem "authlogic",            :version => "2.1.3"
   config.gem "heroku",               :version => "1.8.0"
   config.gem "acts-as-list",         :version => "0.1.2",       :lib => "acts_as_list"
-  config.gem "authlogic-oauth",      :version => "1.0.8",       :lib => "authlogic_oauth"
+  #config.gem "authlogic-oauth",      :version => "1.0.8",       :lib => "authlogic_oauth"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
