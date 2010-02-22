@@ -4,7 +4,7 @@
 	</div>
 	<span class="name"><%= theme.name %></span>
 	<% form_for @app, :html => {:class => "inline"} do |form| %>
-		<%= form.hidden_field :theme_id, :value => theme.id %>
+		<%= form.hidden_field :theme_name, :value => theme.name %>
 		<%= link_to_function('choose', "$(this).parent('form').submit();", :class => 'right button mt5') %>
 	<% end %>
 </li>

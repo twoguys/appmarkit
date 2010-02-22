@@ -4,6 +4,7 @@ class App < ActiveRecord::Base
    
   has_many    :features,    :order => "position",   :dependent => :destroy
   has_many    :links,       :order => "position",   :dependent => :destroy
+  has_many    :domains,                             :dependent => :destroy
   
   validates_presence_of   :name
   
