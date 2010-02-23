@@ -164,8 +164,9 @@ li.app .name { height: 59px; line-height: 59px; vertical-align: middle; display:
 .domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 
 /* Themes */
-li.theme { width: 200px; border: 1px solid #aaa; background-color: #eee; padding: 10px; float: left; margin: 0 15px 0 0; }
-li.theme .name { font-size: 1.5em; padding-top: 10px; display: inline-block; }
+li.theme { width: 200px; border: 1px solid #aaa; background-color: #eee; padding: 10px; float: left; margin: 0 15px 15px 0; }
+li.theme .name { font-size: 1.2em; padding-top: 10px; display: inline-block; }
+li.theme .screenshot-outer { height: 146px; overflow: hidden; }
 
 /* Forms */
 .input_info { font-size: 11px; display: block; color: #555; margin-bottom: 2px; }
