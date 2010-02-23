@@ -13,5 +13,9 @@
 		Do you already have a domain name? You can point it at your appmark.it homepage!
 	</div>
 	coming soon...
-	<%= @app.domain %>
+	<ul>
+		<% for domain in @app.domains %>
+			<li><%= domain.name %></li>
+		<%- end -%>
+	</ul>
 </div>
