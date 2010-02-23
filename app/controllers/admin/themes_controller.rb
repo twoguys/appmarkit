@@ -1,6 +1,7 @@
 class Admin::ThemesController < Admin::BaseController
   
-  #skip_before_filter :admin_required, :only => :install
+  skip_before_filter :admin_required,             :only => :install
+  skip_before_filter :verify_authenticity_token,  :only => :install
   
   def index
     @themes = Theme.all
@@ -43,8 +44,8 @@ class Admin::ThemesController < Admin::BaseController
   end
   
   def install
-    logger.info "HTTP Post from Heroku #{params}"
-    #Theme.install_themes
+    #Theme.install_themes if params[:key] = ENV['HTTP_POST_KEY']
+    head :ok
   end
   
 end
