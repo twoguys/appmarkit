@@ -1,14 +1,15 @@
 class AppsController < ApplicationController
+  
   before_filter {|c| c.nav(:apps)}
-  before_filter :login_required, :except => [:search, :demo]
-  before_filter :find_app, :only => [:edit, :update, :themes, :preview]
+  before_filter :login_required,  :except => [:search, :demo]
+  before_filter :find_app,        :only   => [:edit, :update, :themes, :preview]
   
   def index
     @apps = current_user.apps
   end
   
   def show
-    @app = current_user.apps.find(params[:id], :include => :links)
+    @app = current_user.apps.find(params[:id], :include => [:links, :domains])
   end
   
   def new
@@ -47,7 +48,6 @@ class AppsController < ApplicationController
       name = params[:app][:name]
       @app = App.new(:name => name)
       @apps = ItunesStore.find(:all, :term => name)
-      #@apps = [Struct.new(:name, :artist_name).new("Nezumi" "Marshall Huss")]
     end
   end
   
@@ -70,7 +70,9 @@ class AppsController < ApplicationController
   end
 
   private
+  
     def find_app
       @app = current_user.apps.find(params[:id])
     end
+    
 end

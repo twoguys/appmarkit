@@ -50,7 +50,7 @@ class App < ActiveRecord::Base
   end
   
   def itunes_url_opts
-    self.domains.empty? ? { :subdomain => self.subdomain } : { :host => self.domains.first }
+    self.domains.empty? ? { :subdomain => self.subdomain } : { :host => self.domains.first.name }
   end
   
   def print_description
