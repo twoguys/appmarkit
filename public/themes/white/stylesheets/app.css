@@ -10,7 +10,7 @@ a { color: #75588a; }
 #logo .icon { border: 1px solid #ccc; padding: 5px; background-color: #ddd; width: 57px; height: 57px; float: left; }
 #logo img { width: 57px; height: 57px; }
 #logo .name { float: left; margin-left: 10px; line-height: 65px; vertical-align: middle; }
-#description { float: left; width: 450px; font-size: 1.2em; margin-top: 20px; }
+#description { float: left; width: 450px; height: 350px; overflow: hidden; font-size: 1.2em; margin-top: 20px; }
 #screenshots {
   position: absolute;
   right: 0;
