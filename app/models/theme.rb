@@ -8,14 +8,13 @@ class Theme < ActiveRecord::Base
   
   
   def screenshot_url(size="small")
-    "/themes/#{self.name.gsub(" ", "").underscore}/screenshot-#{size}.png"
+    "/themes/#{self.theme_folder}/screenshot-#{size}.png"
   end
   
   
   def self.install_themes
     puts "-----> Installing Themes"
     Dir.new("#{RAILS_ROOT}/public/themes").entries.each do |theme_name|
-      #if File.directory? theme_name
       unless ['.', '..','.DS_Store'].include? theme_name
         puts "-----> #{theme_name.titleize}"
         theme = Theme.find_or_create_by_name(theme_name.titleize)
@@ -25,6 +24,10 @@ class Theme < ActiveRecord::Base
     end
     
     nil
+  end
+  
+  def theme_folder
+    self.name.gsub(" ", "").underscore
   end
   
   private

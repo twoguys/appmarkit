@@ -1,0 +1,1 @@
+ActionMailer::Base.default_url_options[:host] = ENV['HOST_URL']
