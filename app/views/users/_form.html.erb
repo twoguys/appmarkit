@@ -13,7 +13,7 @@
 	<%= recaptcha_tags(:display => { :theme => 'white' }) %>
 
   <div class="mt10">
-		<%= f.submit "Submit" %>
+		<%= f.submit "Submit", :class => 'button' %>
 		<%= "or #{link_to('Cancel', welcome_path)}" if @user.new_record? %>
 	</div>
 <% end %>
