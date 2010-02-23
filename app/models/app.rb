@@ -60,7 +60,7 @@ class App < ActiveRecord::Base
   private
   
   def set_default_theme
-    #self.theme = Theme.find_by_name(ENV['DEFAULT_THEME'] || "White")
+    self.theme = Theme.find_by_name(ENV['DEFAULT_THEME'] || "White")
   end
   
   
