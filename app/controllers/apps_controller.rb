@@ -43,6 +43,15 @@ class AppsController < ApplicationController
     redirect_to @app
   end
   
+  def destroy
+    @app = current_user.apps.new(params[:app])
+    if @app.destroy
+      redirect_to apps_path
+    else
+      render :action => 'show'
+    end
+  end
+  
   def search
     if params[:app]
       name = params[:app][:name]
