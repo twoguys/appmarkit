@@ -8,22 +8,23 @@ class Theme < ActiveRecord::Base
   
   
   def screenshot_url(size="small")
-    "/themes/#{self.name.slugify}/screenshot-#{size}.png"
+    "/themes/#{self.name.gsub(" ", "").underscore}/screenshot-#{size}.png"
   end
   
   
   def self.install_themes
-
+    puts "-----> Installing Themes"
     Dir.new("#{RAILS_ROOT}/public/themes").entries.each do |theme_name|
       #if File.directory? theme_name
       unless ['.', '..','.DS_Store'].include? theme_name
-        puts "---> Installing #{theme_name}"
+        puts "-----> #{theme_name.titleize}"
         theme = Theme.find_or_create_by_name(theme_name.titleize)
         theme.template = self.read_liquid_file(theme_name)
         theme.save
       end
     end
     
+    nil
   end
   
   private
@@ -35,5 +36,6 @@ class Theme < ActiveRecord::Base
     f.each_line { |line| data += line }
     data
   end
+
   
 end

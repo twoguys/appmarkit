@@ -1,5 +1,8 @@
 class Admin::ThemesController < Admin::BaseController
   
+  skip_before_filter :admin_required,             :only => :install
+  skip_before_filter :verify_authenticity_token,  :only => :install
+  
   def index
     @themes = Theme.all
   end
@@ -38,6 +41,11 @@ class Admin::ThemesController < Admin::BaseController
     @theme = Theme.find(params[:id])
     @theme.destroy
     redirect_to admin_themes_path
+  end
+  
+  def install
+    #Theme.install_themes if params[:key] = ENV['HTTP_POST_KEY']
+    head :ok
   end
   
 end

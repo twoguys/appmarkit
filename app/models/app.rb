@@ -2,7 +2,6 @@ class App < ActiveRecord::Base
   belongs_to  :user
   belongs_to  :theme, :foreign_key => 'theme_name', :primary_key => 'name'
    
-  has_many    :features,    :order => "position",   :dependent => :destroy
   has_many    :links,       :order => "position",   :dependent => :destroy
   has_many    :domains,                             :dependent => :destroy
   

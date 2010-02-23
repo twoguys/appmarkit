@@ -8,7 +8,7 @@ class AppsController < ApplicationController
   end
   
   def show
-    @app = current_user.apps.find(params[:id], :include => [:links, :features])
+    @app = current_user.apps.find(params[:id], :include => :links)
   end
   
   def new

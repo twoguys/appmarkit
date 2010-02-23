@@ -10,6 +10,8 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
+	<%= recaptcha_tags(:display => { :theme => 'white' }) %>
+
   <div class="mt10">
 		<%= f.submit "Submit" %>
 		<%= "or #{link_to('Cancel', welcome_path)}" if @user.new_record? %>
