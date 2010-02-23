@@ -27,7 +27,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.namespace :admin do |admin|
     admin.map '',   :controller => 'dashboard'
-    admin.resources :themes
+    admin.resources :themes, :collection => { :install => :post }
   end
   map.admin 'admin', :controller => 'admin/dashboard', :action => 'index'
     

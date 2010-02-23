@@ -1,5 +1,7 @@
 class Admin::ThemesController < Admin::BaseController
   
+  #skip_before_filter :admin_required, :only => :install
+  
   def index
     @themes = Theme.all
   end
@@ -38,6 +40,11 @@ class Admin::ThemesController < Admin::BaseController
     @theme = Theme.find(params[:id])
     @theme.destroy
     redirect_to admin_themes_path
+  end
+  
+  def install
+    logger.info "HTTP Post from Heroku #{params}"
+    #Theme.install_themes
   end
   
 end
