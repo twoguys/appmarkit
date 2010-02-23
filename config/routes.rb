@@ -2,6 +2,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources     :user_sessions
   map.resources     :users
+  map.resources     :password_resets
   
   map.resources     :apps, 
     :collection => { 
@@ -16,10 +17,11 @@ ActionController::Routing::Routes.draw do |map|
       app.resources :domains,     :only => [:create, :destroy]
   end
 
-  map.itunes        'itunes',  :controller => 'sites',          :action => 'itunes'
+  map.itunes        "itunes",  :controller => "sites",          :action => "itunes"
   map.signin        "signin",  :controller => "user_sessions",  :action => "new"
   map.signout       "signout", :controller => "user_sessions",  :action => "destroy"
   map.signup        "signup",  :controller => "users",          :action => "new"
+
   
   #map.pages         ':page',  :controller => 'pages',         :action => 'show',    :page => //
   map.welcome       'welcome', :controller => 'pages', :action => 'welcome'
