@@ -16,7 +16,7 @@ class Theme < ActiveRecord::Base
 
     Dir.new("#{RAILS_ROOT}/public/themes").entries.each do |theme_name|
       #if File.directory? theme_name
-      unless ['.', '..'].include? theme_name
+      unless ['.', '..','.DS_Store'].include? theme_name
         puts "---> Installing #{theme_name}"
         theme = Theme.find_or_create_by_name(theme_name.titleize)
         theme.template = self.read_liquid_file(theme_name)
