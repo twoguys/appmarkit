@@ -1,10 +1,7 @@
 <div class="light-grey-background p10 mb20">
 	<h2 class="homepage mb10">Homepage</h2>
 	<div class="mb10 strong">
-		We've setup a homepage for your app, you can see it at: (need helper for subdomain link)<br/>
-	</div>
-	<div class="mb10 strong">
-		Want to make changes to your homepage?
+		We've setup a homepage for your app, you can see it at: <%= link_to(root_url(@app.itunes_url_opts)) %><br/>
 	</div>
 	<div class="border-bottom">
 		<strong>1.</strong> Make sure your app's info is correct. <%= link_to("Edit app info", edit_app_path(@app)) %>
