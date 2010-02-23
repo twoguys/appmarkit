@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223030623) do
+ActiveRecord::Schema.define(:version => 20100223051122) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -24,7 +24,6 @@ ActiveRecord::Schema.define(:version => 20100223030623) do
     t.string   "itunes_url"
     t.string   "small_artwork_url"
     t.text     "screenshots"
-    t.string   "domain"
     t.string   "large_artwork_url"
     t.string   "itunes_id"
     t.string   "theme_name"
@@ -53,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20100223030623) do
     t.text     "template"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "screenshot_url"
   end
 
   add_index "themes", ["name"], :name => "index_themes_on_name"

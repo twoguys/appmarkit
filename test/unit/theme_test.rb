@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class ThemeTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  context "A theme" do
+    setup do
+      #@theme = Factory(:theme)
+    end
+    
+    #subject { @theme }
+    
+
+  
   end
 end

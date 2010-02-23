@@ -1,8 +1,15 @@
 require 'test_helper'
 
 class LinkTest < ActiveSupport::TestCase
-  # Replace this with your real tests.
-  test "the truth" do
-    assert true
+
+  context "A link" do
+    setup do
+      #@link = Factory(:link)
+    end
+    
+    #subject { @link }
+    
+
+  
   end
 end
