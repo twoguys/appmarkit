@@ -15,10 +15,8 @@ class App < ActiveRecord::Base
   validates_presence_of   :itunes_url
   validates_format_of     :itunes_url, :with => /^http:\/\/itunes.apple.com\//
   
-  #validates_presence_of   :theme_name
+  before_create :set_default_theme
   
-  # has_attached_file :logo, :styles => { :medium => "300x300>", :thumb => "100x100>" }
-  # has_attached_file :icon, :styles => { :medium => "300x300>", :thumb => "100x100>" }
   serialize :screenshots
   
   liquid_methods :name, :subtitle, :print_description, :author, :features, :links, :itunes_url_opts, :small_artwork_url, :screenshots
@@ -58,5 +56,12 @@ class App < ActiveRecord::Base
   def print_description
     self.description.gsub(/\r\n/, "<br/>")
   end
+  
+  private
+  
+  def set_default_theme
+    #self.theme = Theme.find_by_name(ENV['DEFAULT_THEME'] || "White")
+  end
+  
   
 end
