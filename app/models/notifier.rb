@@ -2,7 +2,7 @@ class Notifier < ActionMailer::Base
   
   default_url_options[:host] = ENV['HOST_URL']
 
-  def password_reset_instructions(user)  
+  def password_reset_instructions(user)
     subject       '[AppMark.it] Password Reset Instructions'  
     from          'Publishur <noreply@appmark.it>'  
     recipients    user.email  

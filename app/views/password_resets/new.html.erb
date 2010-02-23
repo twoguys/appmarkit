@@ -1,0 +1,5 @@
+Reset Password
+
+<% form_for :user, :url => password_resets_path do |f| %>
+	Email: <%= text_field_tag :email %> <%= f.submit "Reset Password" %>
+<%- end -%>
