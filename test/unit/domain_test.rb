@@ -15,8 +15,8 @@ class DomainTest < ActiveSupport::TestCase
     should_validate_presence_of         :name
     should_validate_uniqueness_of       :name
     
-    #should_allow_values_for             :name, "nezumiapp.com", "appmark.it", "my.awesomeapp.com"
-    #should_not_allow_values_for         :name, "http://nezumiapp.com", "https://nezumiapp.com", "http:/nezumiapp.com"
+    should_allow_values_for             :name, "nezumiapp.com", "appmark.it", "my.awesomeapp.com", "my-app.com"
+    should_not_allow_values_for         :name, "http://nezumiapp.com", "https://nezumiapp.com", "http:/nezumiapp.com", ".mysite.com", "-whatever.org", "my-app"
 
 
   end
