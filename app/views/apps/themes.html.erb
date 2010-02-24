@@ -1,12 +1,35 @@
 <%= link_to('Back to my app', @app, :class => 'icon back') %>
 <h1>Choose a theme for your app</h1>
 
-<ul class="themes">
+<div class="centered medium mb5 border-top">
+	Sort with these buttons:
+</div>
+<ul class="sorter">
+	<li class="selected">
+		<a data-value="all" href="#">All</a>
+	</li>
+	<li>
+		<a data-value="light" href="#">Light</a>
+	</li>
+	<li>
+		<a data-value="dark" href="#">Dark</a>
+	</li>
+	<li>
+		<a data-value="vertical" href="#">Vertical</a>
+	</li>
+	<li>
+		<a data-value="horizontal" href="#">Horizontal</a>
+	</li>
+</ul>
+
+<ul id="themes" class="themes">
 	<%= render @themes %>
 </ul>
 
 <% content_for :head do %>
 	<%= javascript_include_tag('jquery.lightbox-0.5.min') %>
+	<%= javascript_include_tag('jquery.quicksand') %>
+	<%= javascript_include_tag('theme-sorter') %>
 	<%= stylesheet_link_tag('jquery.lightbox-0.5') %>
 	<script type="text/javascript">
 		$(document).ready(function() {

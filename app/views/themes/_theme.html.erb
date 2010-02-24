@@ -1,4 +1,4 @@
-<li class="theme">
+<li data-id="<%= theme.id %>" class="theme <%= cycle('light', 'dark') %>">
 	<div class="screenshot-outer">
 		<%= link_to(image_tag(theme.screenshot_url), theme.screenshot_url("large"), :class => 'screenshot') %>
 	</div>

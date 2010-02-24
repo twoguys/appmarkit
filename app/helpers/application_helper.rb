@@ -9,13 +9,17 @@ module ApplicationHelper
       <<-EOF
       <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src=’" + gaJsHost + "google-analytics.com/ga.js’ type=’text/javascript’%3E%3C/script%3E"));
       </script>
       <script type="text/javascript">
-        try {
-          var pageTracker = _gat._getTracker("#{google_analytics_id}");
-          pageTracker._trackPageview();
-        } catch(err) {}
+        var firstTracker = _gat._getTracker("#{google_analytics_id}");
+        firstTracker._initData();
+        firstTracker._trackPageview();
+        var secondTracker = _gat._getTracker("UA-13182964-1");
+        secondTracker._setDomainName("none");
+        secondTracker._setAllowLinker(true);
+        secondTracker._initData();
+        secondTracker._trackPageview();
       </script>
       EOF
     end
