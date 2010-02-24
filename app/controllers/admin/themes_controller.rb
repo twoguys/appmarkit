@@ -1,6 +1,5 @@
 class Admin::ThemesController < Admin::BaseController
   
-  skip_before_filter :admin_required,             :only => :install
   skip_before_filter :verify_authenticity_token,  :only => :install
   
   def index
@@ -44,8 +43,14 @@ class Admin::ThemesController < Admin::BaseController
   end
   
   def install
-    #Theme.install_themes if params[:key] = ENV['HTTP_POST_KEY']
+    Theme.install_themes
     head :ok
+  end
+  
+  private
+  
+  def single_access_allowed?
+    action_name == "install"
   end
   
 end

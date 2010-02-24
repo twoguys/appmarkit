@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224035428) do
+ActiveRecord::Schema.define(:version => 20100224163619) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -68,8 +68,9 @@ ActiveRecord::Schema.define(:version => 20100224035428) do
     t.integer  "failed_login_count"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "admin",              :default => false
-    t.string   "perishable_token",   :default => "",    :null => false
+    t.boolean  "admin",               :default => false
+    t.string   "perishable_token",    :default => "",    :null => false
+    t.string   "single_access_token"
   end
 
   add_index "users", ["perishable_token"], :name => "index_users_on_perishable_token"

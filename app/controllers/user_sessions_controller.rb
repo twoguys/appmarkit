@@ -1,4 +1,5 @@
 class UserSessionsController < ApplicationController
+  
   def new
     nav(:signin)
     @user_session = UserSession.new
@@ -24,4 +25,5 @@ class UserSessionsController < ApplicationController
     flash[:notice] = "Successfully signed out"
     redirect_to root_url
   end
+  
 end
