@@ -8,17 +8,20 @@ class Theme < ActiveRecord::Base
   
   
   def screenshot_url(size="small")
-    "/themes/#{self.theme_folder}/screenshot-#{size}.png"
+    "/themes/#{self.folder}/screenshot-#{size}.png"
   end
-  
+
   
   def self.install_themes
     puts "-----> Installing Themes"
     Dir.new("#{RAILS_ROOT}/public/themes").entries.each do |theme_name|
       unless ['.', '..','.DS_Store'].include? theme_name
-        puts "-----> #{theme_name.titleize}"
-        theme = Theme.find_or_create_by_name(theme_name.titleize)
-        theme.template = self.read_liquid_file(theme_name)
+        config = YAML.load_file("#{RAILS_ROOT}/public/themes/#{theme_name}/config.yml")['theme']
+        puts "-----> #{config['name']}"
+        theme           = Theme.find_or_create_by_name(config['name'])
+        theme.folder    = config['folder']
+        theme.template  = self.read_liquid_file(theme.folder)
+        theme.tags      = config['tags']
         theme.save
       end
     end
@@ -26,16 +29,13 @@ class Theme < ActiveRecord::Base
     nil
   end
   
-  def theme_folder
-    self.name.gsub(" ", "").underscore
-  end
   
   private
   
-  def self.read_liquid_file(theme_name)
+  def self.read_liquid_file(folder)
     data = ''
     dir = Pathname(__FILE__).dirname.expand_path
-    f = File.open("#{RAILS_ROOT}/public/themes/#{theme_name}/index.html", "r") 
+    f = File.open("#{RAILS_ROOT}/public/themes/#{folder}/index.html", "r") 
     f.each_line { |line| data += line }
     data
   end

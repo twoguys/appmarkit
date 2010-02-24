@@ -1,5 +1,6 @@
 class LinksController < ApplicationController
 
+  before_filter :login_required
   before_filter :find_app
   
   def create
@@ -23,7 +24,7 @@ class LinksController < ApplicationController
   private
   
   def find_app
-    @app = App.find(params[:app_id])
+    @app = current_user.apps.find(params[:app_id])
   end
 
 end
