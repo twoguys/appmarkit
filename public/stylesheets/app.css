@@ -156,9 +156,9 @@ a.button { text-decoration: none; font-size: 1.1em; }
 #signup-button:active { top: 1px; }
 
 /* Apps */
-li.app { height: 59px; border: 1px solid #ddd; padding: 5px; background-color: #eee; margin: 0 0 10px; }
+li.app a { display: block; height: 59px; border: 1px solid #ddd; padding: 5px; background-color: #eee; margin: 0 0 10px; }
 li.app img { float: left; height: 59px; margin: 0 10px 0 0; }
-li.app .name { height: 59px; line-height: 59px; vertical-align: middle; display: block; float: left; overflow: hidden; font-size: 1.3em; }
+li.app .name { height: 59px; line-height: 59px; vertical-align: middle; float: left; overflow: hidden; font-size: 1.3em; }
 .analytics { background: transparent url(../images/chart_line.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 .homepage { background: transparent url(../images/home.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 .domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }

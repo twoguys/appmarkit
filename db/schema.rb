@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20100223051122) do
     t.text     "template"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "screenshot_url"
   end
 
   add_index "themes", ["name"], :name => "index_themes_on_name"

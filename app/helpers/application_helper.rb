@@ -1,7 +1,13 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def liquid(app)
-    Liquid::Template.parse(app.theme.template).render 'app' => @app, 'analytics' => google_analytics(app.google_analytics_id)
+    Liquid::Template.parse(app.theme.template).render 'app' => @app,
+      'analytics' => google_analytics(app.google_analytics_id),
+      'footer' => template_footer
+  end
+  
+  def template_footer
+    render :partial => "themes/footer"
   end
   
   def google_analytics(google_analytics_id)
