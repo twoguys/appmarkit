@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-    
+  
+  before_filter { |c| c.nav(:users) }
+  
   def new
     nav(:signup)
     @user = User.new

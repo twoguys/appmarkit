@@ -39,6 +39,9 @@
 							<%= link_to("apps", search_apps_path) if !current_user %>
 						</li>
 						<% if current_user %>
+						<li class="<%= @nav == :users ? "active" : "" %>">
+							<%= link_to('settings', edit_user_path(current_user)) %>
+						</li>
 						<% if current_user.admin? %>
 						<li class="<%= @nav == :admin ? "active" : "" %>">
 							<%= link_to('admin', admin_path) %>

@@ -8,7 +8,7 @@ ActionController::Routing::Routes.draw do |map|
   map.more          'more',    :controller => 'pages',          :action => 'more'
   
   
-  map.resources     :apps, 
+  map.resources :apps, 
     :collection => { 
       :search => :any, 
       :demo   => :get 
@@ -27,6 +27,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.namespace :admin do |admin|
     admin.map '',   :controller => 'dashboard'
+    admin.resources :apps
     admin.resources :themes, :collection => { :install => :post }
   end
   map.admin 'admin', :controller => 'admin/dashboard', :action => 'index'

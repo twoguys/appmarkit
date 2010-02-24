@@ -1,6 +1,6 @@
 class AppsController < ApplicationController
   
-  before_filter {|c| c.nav(:apps)}
+  before_filter { |c| c.nav(:apps) }
   before_filter :login_required,  :except => [:search, :demo]
   before_filter :find_app,        :only   => [:edit, :update, :themes, :preview]
   

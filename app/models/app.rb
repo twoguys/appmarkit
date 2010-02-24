@@ -34,6 +34,7 @@ class App < ActiveRecord::Base
     self.small_artwork_url  = itunes.artwork_url60
     self.large_artwork_url  = itunes.artwork_url100
     self.screenshots        = itunes.screenshot_urls
+    self.author             = itunes.artist_name
   end
   
   def from_itunes_minimal(itunes)

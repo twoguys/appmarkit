@@ -10,7 +10,7 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-	<%= recaptcha_tags(:display => { :theme => 'white' }) %>
+	<%= recaptcha_tags(:display => { :theme => 'white' }) if recaptcha %>
 
   <div class="mt10">
 		<%= f.submit "Submit", :class => 'button' %>

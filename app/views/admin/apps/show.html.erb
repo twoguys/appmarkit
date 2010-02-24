@@ -1,0 +1,6 @@
+<%= render :partial => 'admin/dashboard/nav' %>
+
+<%= image_tag(@app.small_artwork_url, :class => 'top-right') if @app.small_artwork_url %>
+
+<h1><%= @app.name %></h1>
+
