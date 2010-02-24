@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100223051122) do
+ActiveRecord::Schema.define(:version => 20100224035428) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20100223051122) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "screenshot_url"
+    t.string   "folder"
+    t.string   "tags"
   end
 
   add_index "themes", ["name"], :name => "index_themes_on_name"
