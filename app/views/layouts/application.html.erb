@@ -44,6 +44,9 @@
 							<%= link_to('admin', admin_path) %>
 						</li>
 						<%- end -%>
+						<li class="<%= @nav == :users ? "active" : "" %>">
+							<%= link_to('settings', edit_user_path(current_user)) %>
+						</li>
 						<li class="last">
 							<%= link_to('sign out', signout_path) %>
 						</li>

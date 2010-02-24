@@ -3,5 +3,5 @@
 	Already have an account? <%= link_to('Sign in', params[:redirect_to].blank? ? signin_path : signin_path(:redirect_to => params[:redirect_to])) %>
 </div>
 
-<%= render :partial => 'form' %>
+<%= render :partial => 'form', :locals => { :recaptcha => true } %>
 
