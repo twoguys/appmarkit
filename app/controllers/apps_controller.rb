@@ -65,6 +65,7 @@ class AppsController < ApplicationController
   end
   
   def preview
+    @app.theme = Theme.find(params[:theme_id]) if params[:theme_id]
     render :layout => false
   end
   
@@ -74,7 +75,7 @@ class AppsController < ApplicationController
     logger.info itunes.to_yaml
     @app = App.new
     @app.from_itunes(itunes)
-    @app.theme = Theme.first
+    @app.theme = params[:theme_id] ? Theme.find(params[:theme_id]) : Theme.first
     render :action => 'preview', :layout => false
   end
 

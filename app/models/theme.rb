@@ -6,6 +6,8 @@ class Theme < ActiveRecord::Base
   
   validates_presence_of     :template
   
+  validates_presence_of     :tags
+  
   
   def screenshot_url(size="small")
     "/themes/#{self.folder}/screenshot-#{size}.png"

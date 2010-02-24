@@ -11,7 +11,7 @@ Factory.define :app do |app|
   app.large_artwork_url         "http://a1.phobos.apple.com/us/r1000/009/Purple/63/ca/17/mzl.torsskza.png"
   app.itunes_id                 "346715875"
   app.theme_name                "White"
-  
-  #app.domains          {}
-  #app.user            { |b| b.association(:email_confirmed_user) }  
+    
+  app.links                     { |links| [links.association(:link)] }
+  app.domains                   { |domains| [domains.association(:domain)] }
 end

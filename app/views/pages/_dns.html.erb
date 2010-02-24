@@ -1,0 +1,25 @@
+You can use your own domains with appmark.it.
+
+Let's say you domain was awesomeapp.com
+
+To use this domain you will need to set up 3 A Records with your DNS provider to the IP addresses below.
+
+http://help.godaddy.com/article/678
+
+75.101.163.44
+75.101.145.87
+174.129.212.2
+
+
+If would also like www.awesomeapp.com to show your site, you will need to add a CNAME record for 'www' that points to 'appmark.it'. 
+
+http://help.godaddy.com/article/679
+
+
+
+Alternatively, you might just want awesomeapp.mydomain.com to show your site and not the root domain. Just add a CNAME for 'awesomeapp' that points to 'appmark.it'
+
+
+Once you have done this make sure to set your domains in for your app in the app management page. If you want to use awesomeapp.com and www.awesomeapp.com, both will need to be added separately
+
+
