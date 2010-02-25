@@ -17,20 +17,18 @@
 	<body>
 		<div id="insides">
 			<div id="logo">
-				<img src="{{app.small_artwork_url}}"> <span class="name">{{app.name}}</span>
+				<img src="{{app.small_artwork_url}}" alt="icon"> <span class="name">{{app.name}}</span>
 			</div>
 			<div id="description">
 				{{app.print_description}}
 			</div>
 			<div id="screenshots">
 				<ul id="screenshots-insides">
-					<li style="list-style: none">{% for screenshot in app.screenshots %}
-					</li>
+					{% for screenshot in app.screenshots %}
 					<li class="screenshot">
-						<img src="{{screenshot}}">
+						<img src="{{screenshot}}" alt="screenshot"/>
 					</li>
-					<li style="list-style: none">{% endfor %}
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="app-store-link">

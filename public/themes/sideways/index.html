@@ -18,18 +18,16 @@
 		<div id="insides">
 			<div id="screenshots">
 				<ul id="screenshots-insides">
-					<li style="list-style: none">{% for screenshot in app.screenshots %}
-					</li>
+					{% for screenshot in app.screenshots %}
 					<li class="screenshot">
-						<img src="{{screenshot}}">
+						<img src="{{screenshot}}" alt="screenshot">
 					</li>
-					<li style="list-style: none">{% endfor %}
-					</li>
+					{% endfor %}
 				</ul>
 			</div>
 			<div id="logo">
 				<div class="icon">
-					<img src="{{app.small_artwork_url}}">
+					<img src="{{app.small_artwork_url}}" alt="icon"/>
 				</div>
 				<div class="name">{{app.name}}</div>
 			</div>
