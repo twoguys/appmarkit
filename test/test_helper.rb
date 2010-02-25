@@ -1,6 +1,8 @@
 ENV["RAILS_ENV"] = "test"
+ENV['RECAPTCHA_PUBLIC_KEY'] = "6LdyYgsAAAAAAAFEx75KDLoMvBXdpDQZay8RYYHv"
 require File.expand_path(File.dirname(__FILE__) + "/../config/environment")
 require 'test_help'
+require "authlogic/test_case" 
 
 class ActiveSupport::TestCase
   # Transactional fixtures accelerate your tests by wrapping each test method
@@ -19,20 +21,24 @@ class ActiveSupport::TestCase
   # The only drawback to using transactional fixtures is when you actually 
   # need to test transactions.  Since your test is bracketed by a transaction,
   # any transactions started in your code will be automatically rolled back.
-  self.use_transactional_fixtures = true
+  # self.use_transactional_fixtures = true
 
   # Instantiated fixtures are slow, but give you @david where otherwise you
   # would need people(:david).  If you don't want to migrate your existing
   # test cases which use the @david style and don't mind the speed hit (each
   # instantiated fixtures translates to a database query per test method),
   # then set this back to true.
-  self.use_instantiated_fixtures  = false
+  # self.use_instantiated_fixtures  = false
 
   # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
   #
   # Note: You'll currently still have to declare fixtures explicitly in integration tests
   # -- they do not yet inherit this setting
-  fixtures :all
-
+  # fixtures :all
+  
   # Add more helper methods to be used by all tests here...
+  def signin_as(user)
+    activate_authlogic
+    UserSession.create(user)
+  end
 end

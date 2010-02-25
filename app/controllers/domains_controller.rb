@@ -4,11 +4,11 @@ class DomainsController < ApplicationController
   before_filter :find_app
   
   def create
-    @domain = @app.domains.new(params[:link])
+    @domain = @app.domains.new(params[:domain])
     if @domain.save
       flash[:notice] = "Domain added"
     else
-      flash[:error] = "Error creating domain"
+      flash[:error] = "Error adding domain"
     end
     redirect_to @app
   end
@@ -16,7 +16,7 @@ class DomainsController < ApplicationController
   def destroy
     @domain = @app.domains.find(params[:id])
     @domain.destroy
-    flash[:notice] = "Domain deleted"
+    flash[:notice] = "Domain removed"
     redirect_to @app
   end
   
