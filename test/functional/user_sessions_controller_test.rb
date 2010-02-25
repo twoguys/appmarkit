@@ -5,7 +5,7 @@ class UserSessionsControllerTest < ActionController::TestCase
   context "A user who" do
     
     setup do
-      Factory(:user)
+      @user = Factory(:user)
     end
     
     context "is going to the signin page" do
@@ -95,7 +95,15 @@ class UserSessionsControllerTest < ActionController::TestCase
     end
   
     context "signs out" do
-      # TODO test destroy method
+      setup do
+        signin_as(@user)
+        delete :destroy
+      end
+      
+      should_assign_to                  :user_session
+      should_respond_with               :redirect
+      should_redirect_to("root url")    { root_url }
+      should_set_the_flash_to           /signed out/
     end
   
   
