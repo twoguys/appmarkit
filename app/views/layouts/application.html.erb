@@ -32,9 +32,6 @@
 						<li class="first<%= @nav == :home ? " active" : "" %>">
 							<%= link_to('home', welcome_path) %>
 						</li>
-						<li class="<%= @nav == :more ? "active" : "" %>">
-							<%= link_to('more', more_path) %>
-						</li>
 						<li class="<%= @nav == :apps ? "active" : "" %>">
 							<%= link_to("apps", apps_path) if current_user %>
 							<%= link_to("apps", search_apps_path) if !current_user %>

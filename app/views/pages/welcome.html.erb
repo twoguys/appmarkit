@@ -1,9 +1,9 @@
 <div class="centered">
 	<%= image_tag('/images/splash.png') %>
 </div>
-<div class="mt20">
+<div class="mauto mt20 lined">
 	<div class="centered">
-		<h2>Have an app in the iTunes store?</h2>
+		<h2>Have an app in the iTunes store? Try it out!</h2>
 	</div>
 	<div class="w400 mauto mt10">
 		<div class="small weak centered">Search by app name or author name</div>
@@ -11,9 +11,11 @@
 			<%#= f.label :name, "Search by app name or author name" %>
 			<%= f.text_field :name %>
 			<%= f.submit 'Search', :class => 'button' %>
-			or <%= link_to('find out more', more_path) %>
 		<%- end -%>
 	</div>
+</div>
+<div class="centered mt40 lined">
+	<%= image_tag('/images/more.png') %>
 </div>
 
 <% content_for :head do %>

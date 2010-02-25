@@ -343,6 +343,7 @@ table.styled tr:hover td { background-color: #d8e8ef; }
 .w300 { width: 300px; }
 .w400 { width: 400px; }
 .w600 { width: 600px; }
+.w700 { width: 700px; }
 .w800 { width: 800px; }
 .h30 { height: 30px; }
 .h100 { height: 100%; display: block; }
@@ -393,6 +394,7 @@ small, .small, input.small { font-size: 0.88em; }
   -webkit-box-shadow: rgba(0, 0, 0, 0.496094) 0px 0px 5px;
   background-color: #efefef;
 }
+.lined { background: transparent url(../images/faded-grey-line.png) no-repeat 50% 0; padding-top: 30px; margin-top: 30px; }
 .light-grey { color: #aaa; }
 .light-grey-border { border: 1px solid #ccc; }
 .light-grey-background { background-color: #eee; }
