@@ -7,8 +7,8 @@ html, body {
 }
 html, body, #wrap { height: 100%; }
 body > #wrap { height: auto; min-height: 100%; }
-#main { padding-bottom: 290px; }
-#footer { position: relative; margin-top: -291px; height: 250px; clear: both; }
+#main { padding-bottom: 120px; }
+#footer { position: relative; margin-top: -101px; height: 50px; clear: both; }
 .clearfix:after {content: ".";
 	display: block;
 	height: 0;
@@ -114,6 +114,7 @@ a.button { text-decoration: none; font-size: 1.1em; }
   background: transparent url(../images/header-bg.png) repeat-x;
 }
 #header-insides { width: 960px; padding: 0 20px 0; margin: 0 auto; position: relative; }
+#header #twoguys-link { position: absolute; top: 0; right: -20px; border: 1px solid #aaa; border-top: none; }
 #header #logo { margin-top: 15px; }
 #header #nav { position: absolute; top: 0; right: 20px; font-size: 1.3em; padding: 0; }
 #header #nav li {
@@ -164,12 +165,13 @@ li.app .name { height: 59px; line-height: 59px; vertical-align: middle; float: l
 .domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
 
 /* Themes */
-li.theme { width: 200px; border: 1px solid #aaa; background-color: #eee; padding: 10px; float: left; margin: 0 15px 15px 0; }
+ul.themes { width: 880px; margin: 0 auto; }
+li.theme { width: 400px; border: 1px solid #aaa; background-color: #eee; padding: 10px; float: left; margin: 0 15px 15px 0; }
 li.theme .name { font-size: 1.2em; padding-top: 10px; display: inline-block; }
-li.theme .screenshot-outer { height: 146px; overflow: hidden; }
+li.theme .screenshot-outer { height: 292px; overflow: hidden; }
 
 /* Sorter */
-.sorter { width: 100%; height: 40px; text-align: center; }
+.sorter { width: 100%; height: 40px; text-align: center; margin: 0 0 15px; }
 .sorter li, .sorter li a { display: inline-block; color: #333; }
 .sorter li {
   margin-left: 1px;
@@ -202,8 +204,8 @@ div.pagination .disabled { color: #aaa; border: none; }
   border-top: 1px solid #ccc;
   text-align: center;
   width: 100%;
-  color: #e5e5e5;
   padding: 20px 0;
+  background-color: #eee;
 }
 #footer_insides { width: 800px; margin: 0 auto; color: #666; font-size: 12px; }
 #footer_insides td { width: 250px; text-align: left; vertical-align: top; padding: 0 15px; }

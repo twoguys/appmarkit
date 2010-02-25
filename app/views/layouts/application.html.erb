@@ -26,6 +26,7 @@
 		<div id="main" class="clearfix">
 			<div id="header">
 				<div id="header-insides">
+					<%#= link_to(image_tag('/images/2g-link-image.png'), 'http://weretwoguys.com', :id => 'twoguys-link') %>
 					<%= link_to(image_tag('/images/logo.png', :id => 'logo'), root_path) %>
 					<ul id="nav">
 						<li class="first<%= @nav == :home ? " active" : "" %>">
@@ -72,7 +73,12 @@
 				</div>
 			</div>
 		</div>
-  </div>
+  </div>	
+	<div id="footer">
+		<div id="footer-insides">
+			This is a <%= link_to('TwoGuys', 'http://weretwoguys.com') %> project.
+		</div>
+	</div>
 	<script type="text/javascript">
 		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
