@@ -63,7 +63,8 @@ class App < ActiveRecord::Base
   end
   
   def print_description
-    self.description.gsub(/\r\n/, "<br/>")
+    #self.description.gsub(/\r\n/, "<br/>")
+    RedCloth.new(self.description).to_html
   end
   
   private

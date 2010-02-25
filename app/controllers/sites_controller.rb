@@ -8,7 +8,7 @@ class SitesController < ApplicationController
   end
 
   def itunes
-    #response.headers['Cache-Control'] = 'public, max-age=300'
+    response.headers['Cache-Control'] = 'public, max-age=300'
     render :layout => false
   end
   

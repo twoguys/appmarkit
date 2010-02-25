@@ -24,6 +24,7 @@ Rails::Initializer.run do |config|
   config.gem "httparty",             :version => "0.5.2"
   config.gem "authlogic",            :version => "2.1.3"
   config.gem "heroku",               :version => "1.8.0"
+  config.gem "RedCloth",             :version => "4.2.2"
   config.gem "acts-as-list",         :version => "0.1.2",       :lib => "acts_as_list"
   config.gem "recaptcha",            :version => "0.2.3",       :lib => "recaptcha/rails"
   #config.gem "authlogic-oauth",      :version => "1.0.8",       :lib => "authlogic_oauth"
