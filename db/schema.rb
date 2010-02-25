@@ -52,7 +52,6 @@ ActiveRecord::Schema.define(:version => 20100224163619) do
     t.text     "template"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "screenshot_url"
     t.string   "folder"
     t.string   "tags"
   end

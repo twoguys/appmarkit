@@ -41,6 +41,5 @@ class Theme < ActiveRecord::Base
     f.each_line { |line| data += line }
     data
   end
-
   
 end

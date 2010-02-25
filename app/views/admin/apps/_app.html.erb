@@ -1,4 +1,6 @@
 <li class="app">
-	<%= link_to(image_tag(app.small_artwork_url), app) if app.small_artwork_url %>
-	<span class="name"><%= link_to(app.name, ['admin', app]) %></span>
+	<a href="<%= app_path(app) %>">
+	<%= image_tag(app.small_artwork_url) if app.small_artwork_url %>
+	<span class="name"><%= app.name %></span>
+	</a>
 </li>
