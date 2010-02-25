@@ -16,6 +16,8 @@ class ThemeTest < ActiveSupport::TestCase
         
     should_validate_presence_of         :template
     
+    should_validate_presence_of         :folder
+    
     should_validate_presence_of         :tags
 
   
