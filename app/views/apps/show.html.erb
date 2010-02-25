@@ -10,15 +10,4 @@
 
 <%= render 'apps/homepage' %>
 
-<div class="light-grey-background p10">
-	<h2 class="domains mb10">Domain</h2>
-	<div class="mb10">
-		Do you already have a domain name? You can point it at your appmark.it homepage!
-	</div>
-	coming soon...
-	<ul>
-		<% for domain in @app.domains %>
-			<li><%= domain.name %></li>
-		<%- end -%>
-	</ul>
-</div>
+<%= render 'apps/domains' %>

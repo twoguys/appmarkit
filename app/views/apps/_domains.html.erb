@@ -1,0 +1,35 @@
+<div class="light-grey-background p10">
+	<h2 class="domains mb10">Domain</h2>
+	<div class="mb10">
+		Do you already have a domain name? You can point it at your appmark.it homepage!
+	</div>
+	
+	<p class="border-top strong">Let's say your domain is awesomeapp.com and you want to point it at your appmark.it homepage.</p>
+
+	<p>
+		To use this domain you will need to set up 3 A Records with your DNS provider to the IP addresses below:
+	</p>
+
+	<ul class="mb10">
+		<li>75.101.163.44</li>
+		<li>75.101.145.87</li>
+		<li>174.129.212.2</li>
+	</ul>
+
+	<p>If you use GoDaddy, check out <%= auto_link("http://help.godaddy.com/article/678") %></p>
+
+	<p class="border-top strong">Let's say you also want <strong>www</strong>.awesomeapp.com to point to your homepage.</p>
+	
+	<p>You will need to add a CNAME record for 'www' that points to 'appmark.it'.</p>
+
+	<p>If you use GoDaddy, check out <%= auto_link("http://help.godaddy.com/article/679") %></p>
+
+
+	<p class="border-top strong">Alternatively, you might just want awesomeapp.mydomain.com to show your site and not the root domain.</p>
+	
+	<p>Just add a CNAME for 'awesomeapp' that points to 'appmark.it'</p>
+
+
+	<p class="medium strong border-top">If you do any of this, make sure to tell us your domains below.</p>
+	<p>If you want to use awesomeapp.com and www.awesomeapp.com, both will need to be added separately.</p>
+</div>
