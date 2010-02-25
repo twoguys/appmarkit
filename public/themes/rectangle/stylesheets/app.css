@@ -4,7 +4,7 @@ body {
   font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 14px;
 }
-a { color: #75588a; }
+a { color: #40b8ed; }
 #insides { width: 800px; height: 800px; margin: 30px auto 0; position: relative; }
 #logo { position: absolute; top: 70px; left: 300px; font-size: 2.5em; color: #fff; margin: 0 0 30px; height: 55px; }
 #logo .icon { width: 57px; height: 57px; float: left; border: 1px solid #555; }
@@ -28,6 +28,6 @@ a { color: #75588a; }
   margin: 0 auto;
   display: block;
   background: transparent url(../../../images/app_store.png) no-repeat 0 0;
-  width: 188px;
+  width: 160px;
   height: 79px;
 }
