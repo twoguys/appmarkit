@@ -16,16 +16,17 @@ class AppsController < ApplicationController
     @app = current_user.apps.new
     
     if params[:id]
-      @itunes = ItunesStore.find(params[:id])
-      @itunes_id = params[:id]
+      @itunes     = ItunesStore.find(params[:id])
+      @itunes_id  = params[:id]
       @app.from_itunes(@itunes) if @itunes
     end
   end
   
   def create
-    @app = current_user.apps.new(params[:app])
-    @itunes = ItunesStore.find(params[:itunes_id])
+    @app      = current_user.apps.new(params[:app])
+    @itunes   = ItunesStore.find(params[:itunes_id])
     @app.from_itunes_minimal(@itunes)
+    
     if @app.save
       flash[:notice] = "App created"
       redirect_to @app
@@ -55,8 +56,8 @@ class AppsController < ApplicationController
   
   def search
     if params[:app]
-      name = params[:app][:name]
-      @app = App.new(:name => name)
+      name  = params[:app][:name]
+      @app  = App.new(:name => name)
       @apps = ItunesStore.find(:all, :term => name)
     end
   end
@@ -67,23 +68,24 @@ class AppsController < ApplicationController
   
   def preview
     @app.theme = Theme.find(params[:theme_id]) if params[:theme_id]
+    
     render :layout => false
   end
   
   def demo
-    itunes_id = params[:app]
-    itunes = ItunesStore.find(itunes_id)
-    logger.info itunes.to_yaml
-    @app = App.new
+    itunes_id   = params[:app]
+    itunes      = ItunesStore.find(itunes_id)
+    @app        = App.new
+    @app.theme  = params[:theme_id] ? Theme.find(params[:theme_id]) : Theme.first
     @app.from_itunes(itunes)
-    @app.theme = params[:theme_id] ? Theme.find(params[:theme_id]) : Theme.first
+    
     render :action => 'preview', :layout => false
   end
 
   private
   
-    def find_app
-      @app = current_user.apps.find(params[:id])
-    end
+  def find_app
+    @app = current_user.apps.find(params[:id])
+  end
     
 end
