@@ -1,8 +1,8 @@
 Factory.define :user do |user|
   user.email                     "mwhuss@gmail.com"
-  user.crypted_password          "7d99695a0189319dd4caee91aef44d70e516f7d06cb9ad17e61374701d9a77bc4ab0ef177ba7318045752c5b9c18f88416b5c5e364f516b2b8ee7a96698f291c"
-  user.password_salt             "KEy37vAKLIRZm3YDFzaO"
-    
+  user.password                  "password"
+  user.password_confirmation     "password"
+
   user.apps                     { |apps| [apps.association(:app)] }
 end
 

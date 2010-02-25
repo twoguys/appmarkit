@@ -8,7 +8,6 @@ class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
     if @user_session.save
-      #flash[:notice] = "Successfully signed in"
       if !params[:redirect_to].blank?
         redirect_to params[:redirect_to]
       else
