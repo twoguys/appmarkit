@@ -1,0 +1,32 @@
+body {
+  background: #fff url(../images/background.png) repeat-x;
+  color: #555;
+  font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px;
+}
+a { color: #75588a; }
+#insides { width: 800px; margin: 30px auto; position: relative; }
+#logo { font-size: 2.5em; color: #000; margin: 0 0 30px; height: 55px; }
+#logo .icon { border: 1px solid #ccc; padding: 5px; background-color: #ddd; width: 57px; height: 57px; float: left; }
+#logo img { width: 57px; height: 57px; }
+#logo .name { float: left; margin-left: 10px; line-height: 65px; vertical-align: middle; }
+#description { width: 800px; overflow: hidden; font-size: 1.2em; margin: 20px 0; }
+#screenshots {
+  margin: 0 auto;
+  width: 514px;
+  height: 293px;
+  background: transparent url(../../../images/iphone-sideways.png) no-repeat 0 0;
+  position: relative;
+}
+#screenshots-insides { width: 294px; height: 195px; position: absolute; top: 40px; left: 108px; padding: 0; margin: 0; }
+.screenshot, .screenshot img { width: 294px; height: 195px; }
+.screenshot { list-style-type: none; }
+
+#app-store-link {  }
+#app-store-link a {
+  margin: 0 auto;
+  display: block;
+  background: transparent url(../images/app_store.png) no-repeat 0 0;
+  width: 188px;
+  height: 79px;
+}

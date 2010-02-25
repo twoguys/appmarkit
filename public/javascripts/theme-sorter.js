@@ -62,11 +62,8 @@ $(document).ready(function() {
       //       });
       
       $themes.quicksand($filtered_data, $preferences);
-      //console.log($themes);
-      //console.log($themes.clone().find('li.light'));
-      //$themes.quicksand($themes, $themes.clone().find('li.light'), $preferences);
       
-      
+      return false;
     });
   });
 });
