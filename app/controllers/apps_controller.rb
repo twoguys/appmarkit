@@ -14,11 +14,14 @@ class AppsController < ApplicationController
   
   def new
     @app = current_user.apps.new
+    @itunes     = ItunesStore.find(params[:id])
     
-    if params[:id]
-      @itunes     = ItunesStore.find(params[:id])
+    if params[:id] && @itunes
       @itunes_id  = params[:id]
-      @app.from_itunes(@itunes) if @itunes
+      @app.from_itunes(@itunes)
+    else
+      flash[:error] = "Invalid App, please try your search again"
+      redirect_to search_apps_path
     end
   end
   
