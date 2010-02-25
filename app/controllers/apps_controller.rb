@@ -44,8 +44,9 @@ class AppsController < ApplicationController
   end
   
   def destroy
-    @app = current_user.apps.new(params[:app])
+    @app = current_user.apps.find(params[:id])
     if @app.destroy
+      flash[:notice] = "App deleted"
       redirect_to apps_path
     else
       render :action => 'show'
