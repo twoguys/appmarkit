@@ -10,8 +10,15 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
 
-	<%= recaptcha_tags(:display => { :theme => 'white' }) if recaptcha %>
-
+	<% if recaptcha %>
+		<%= recaptcha_tags(:display => { :theme => 'white' }) %>
+	
+		<div class="mb10 small">
+			<br />
+			By clicking "I accept. Create my account.", you are agreeing to the <%= link_to("Terms and Conditions of Use &amp; Privacy Policy", terms_path, :target => 'new') %>.
+		</div>
+	<%- end -%>
+	
   <div class="mt10">
 		<%= f.submit "Submit", :class => 'button' %>
 		<%= "or #{link_to('Cancel', welcome_path)}" if @user.new_record? %>
