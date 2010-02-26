@@ -7,6 +7,9 @@
 		<h3>1. Make sure your app's info is correct.</h3>
 		<div class="indented">
 			<%= link_to("Edit app info", edit_app_path(@app)) %>
+			<div class="weak">
+				<%= link_to("Preview your homepage", preview_app_path(@app)) %> (We cache your homepage every 5 minutes to save our servers some work, so this will show your changes right away.)
+			</div>
 		</div>
 	</div>
 	<div class="border-bottom">
@@ -26,7 +29,7 @@
 		<div class="indented">
 			<strong class="block">Links</strong>
 			Add links to the bottom of your homepage:
-		</di>
+		</div>
 	</div>
 	<%#= link_to("Preview Site", preview_app_path(@app)) %>
 </div>
