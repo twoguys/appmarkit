@@ -10,16 +10,21 @@ class LinksController < ApplicationController
     else
       flash[:error] = "Error adding link"
     end
-    redirect_to @app
   end
   
   def destroy
     @link = @app.links.find(params[:id])
     @link.destroy
     flash[:notice] = "Link removed"
-    redirect_to @app
   end
   
+  def sort
+    @app.links.each do |link|
+      link.position = params['app-links'].index(link.id.to_s) + 1
+      link.save
+    end
+    render :nothing => true
+  end
   
   private
   

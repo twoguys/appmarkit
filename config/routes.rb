@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signout       "signout", :controller => "user_sessions",  :action => "destroy"
   map.signup        "signup",  :controller => "users",          :action => "new"
   map.welcome       'welcome', :controller => 'pages',          :action => 'welcome'
-  map.more          'more',    :controller => 'pages',          :action => 'more'
+  map.terms         'terms',   :controller => 'pages',          :action => 'terms'
   
   
   map.resources :apps, 
@@ -17,7 +17,7 @@ ActionController::Routing::Routes.draw do |map|
       :preview  => :get,
       :themes   => :get
     } do |app|
-      app.resources :links,       :only => [:create, :destroy]
+      app.resources :links,       :only => [:create, :destroy], :collection => { :sort => :post }
       app.resources :domains,     :only => [:create, :destroy]
   end
   

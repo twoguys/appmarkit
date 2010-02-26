@@ -1,0 +1,3 @@
+page[@link].remove
+page["add-link-form"].hide() if @link && @link.app.links.count == 5
+page["add-link-form"].show() if @link && @link.app.links.count < 5

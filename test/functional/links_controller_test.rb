@@ -12,24 +12,24 @@ class LinksControllerTest < ActionController::TestCase
     
     context "wants to add a valid link" do
       setup do
-        post :create, :app_id => @app.id, :link => { :title => "Twitter", :url => "http://twitter.com/nezumiapp" }
+        post :create, :app_id => @app.id, :link => { :title => "Twitter", :url => "http://twitter.com/nezumiapp" }, :format => :js
       end
       
       should_assign_to                  :link
-      should_respond_with               :redirect
-      should_redirect_to("apps page")   { @app }
+      should_respond_with               :success
+      should_render_template            :create
       should_set_the_flash_to           /added/
       
     end
     
     context "wants to add a invalid link" do
       setup do
-        post :create, :app_id => @app.id, :link => { :title => "", :url => "http://twitter.com/nezumiapp" }
+        post :create, :app_id => @app.id, :link => { :title => "", :url => "http://twitter.com/nezumiapp" }, :format => :js
       end
       
       should_assign_to                  :link
-      should_respond_with               :redirect
-      should_redirect_to("apps page")   { @app }
+      should_respond_with               :success
+      should_render_template            :create
       should_set_the_flash_to           /Error/
       
     end
@@ -37,12 +37,12 @@ class LinksControllerTest < ActionController::TestCase
     context "wants to remove an existing link" do
       setup do
         @link = @app.links.first
-        delete :destroy, :app_id => @app.id, :id => @link.id
+        delete :destroy, :app_id => @app.id, :id => @link.id, :format => :js
       end
       
       should_assign_to                  :link
-      should_respond_with               :redirect
-      should_redirect_to("apps page")   { @app }
+      should_respond_with               :success
+      should_render_template            :destroy
       should_set_the_flash_to           /removed/
       
     end

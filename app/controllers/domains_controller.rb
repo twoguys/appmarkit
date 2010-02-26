@@ -10,14 +10,12 @@ class DomainsController < ApplicationController
     else
       flash[:error] = "Error adding domain"
     end
-    redirect_to @app
   end
   
   def destroy
     @domain = @app.domains.find(params[:id])
     @domain.destroy
     flash[:notice] = "Domain removed"
-    redirect_to @app
   end
   
   

@@ -6,6 +6,8 @@ class Theme < ActiveRecord::Base
   
   validates_presence_of     :template
   
+  validates_presence_of     :folder
+  
   validates_presence_of     :tags
   
   

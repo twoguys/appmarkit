@@ -1,0 +1,6 @@
+page.insert_html :bottom, 'app-links', :partial => 'link', :object => @link
+page["link_title"].val('')
+page["link_url"].val('')
+page["link_title"].focus()
+page["add-link-form"].hide() if @link && @link.app.links.count == 5
+page["add-link-form"].show() if @link && @link.app.links.count < 5
