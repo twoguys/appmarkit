@@ -1,9 +1,9 @@
 <% form_remote_for :link, Link.new, :url => [@app, 'links'], :html => {:id => 'add-link-form'} do |f| %>
 	<div id="app-link-errors"></div>
 	<div class="small">
-	Link text: <%= f.text_field :title, :class => 'small skinny' %>
-	Link URL: <%= f.text_field :url, :class => 'small' %>
-	<%= f.submit "Add Link" %>
+		Link text: <%= f.text_field :title, :class => 'small skinny' %>
+		Link URL: <%= f.text_field :url, :class => 'small' %>
+		<%= f.submit "Add Link" %>
 	</div>
 <%- end -%>
 

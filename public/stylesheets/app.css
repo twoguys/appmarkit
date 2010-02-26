@@ -201,6 +201,11 @@ div.pagination a:hover { background-color: #d0d0d0; }
 div.pagination span.current { font-weight: 900; background-color: #333; color: #e5e5e5; border: 1px solid #333; }
 div.pagination .disabled { color: #aaa; border: none; }
 
+/* Formatting Guide */
+#formatting-guide th, #formatting-guide td { padding: 5px; }
+#formatting-guide th { background-color: #353535; color: #eee; }
+#formatting-guide td { background-color: #fff; }
+
 #footer {
   border-top: 1px solid #ccc;
   text-align: center;
@@ -415,6 +420,7 @@ small, .small, input.small { font-size: 0.88em; }
 .no_underline, .no_underline:hover { text-decoration: none; }
 .valign-top { vertical-align: top; }
 .disc-list li { list-style-type: disc; margin-left: 20px; }
+.number-list li { list-style-type: decimal; margin-left: 20px; }
 .header { font-size: 18px; border-bottom: 1px solid #ccc; margin-bottom: 10px; }
 .header img { float: left; margin: -8px 5px 0 0; }
 .information { color: #777; margin-bottom: 20px; }
@@ -441,4 +447,4 @@ ul.lined li:last-child { border: none; }
 .twitter-icon { float: left; padding: 0 5px 0; }
 textarea.theme { width: 100%; height: 400px;}
 .large-artwork { width: 350px; height: 350px; }
-.screenshot { width: 160px; height: 240px; }
+.screenshot { max-width: 240px; max-height: 240px; margin: 0 5px 5px 0; }

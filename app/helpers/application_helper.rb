@@ -18,14 +18,16 @@ module ApplicationHelper
         document.write(unescape("%3Cscript src=’" + gaJsHost + "google-analytics.com/ga.js’ type=’text/javascript’%3E%3C/script%3E"));
       </script>
       <script type="text/javascript">
-        var firstTracker = _gat._getTracker("#{google_analytics_id}");
-        firstTracker._initData();
-        firstTracker._trackPageview();
-        var secondTracker = _gat._getTracker("UA-13182964-1");
-        secondTracker._setDomainName("none");
-        secondTracker._setAllowLinker(true);
-        secondTracker._initData();
-        secondTracker._trackPageview();
+        try {
+          var firstTracker = _gat._getTracker("#{google_analytics_id}");
+          firstTracker._initData();
+          firstTracker._trackPageview();
+          var secondTracker = _gat._getTracker("UA-13182964-1");
+          secondTracker._setDomainName("none");
+          secondTracker._setAllowLinker(true);
+          secondTracker._initData();
+          secondTracker._trackPageview();
+        } catch(err) {}
       </script>
       EOF
     end

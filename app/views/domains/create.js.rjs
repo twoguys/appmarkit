@@ -1,1 +1,3 @@
 page.insert_html :bottom, 'app-domains', :partial => 'domain', :object => @domain
+page["domain_name"].val('')
+page["domain_name"].focus()

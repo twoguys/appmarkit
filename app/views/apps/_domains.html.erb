@@ -1,24 +1,23 @@
 <div class="light-grey-background p10">
 	<h2 class="domains mb10">Domain</h2>
-	<div class="mb10">
+	<div class="mb10 strong">
 		Do you already have a domain name? You can point it at your appmark.it homepage!
 	</div>
 	
 	<div>
 		<% form_remote_for :domain, Domain.new, :url => [@app, 'domains'] do |f| %>
 			<div id="app-domain-errors"></div>
-			http://<%= f.text_field :name %> <%= f.submit 'Add Domain' %>
-			<ul id='app-domains'>
-				<%= render @app.domains %>
-			</ul>
+			http:// <%= f.text_field :name, :class => 'small' %> <%= f.submit 'Add Domain' %>
 		<%- end -%>
+		<ul id='app-domains'>
+			<%= render @app.domains %>
+		</ul>
 	</div>
 	
-	
-	
-	<p class="border-top strong">Let's say your domain is awesomeapp.com and you want to point it at your appmark.it homepage.</p>
+	<p class="border-top strong">Once you've added a domain above, you'll want to configure some things on your side.  Read below for more information.</p>
 
 	<p>
+		Let's say your domain is awesomeapp.com and you want to point it at your appmark.it homepage.<br/>
 		To use this domain you will need to set up 3 A Records with your DNS provider to the IP addresses below:
 	</p>
 

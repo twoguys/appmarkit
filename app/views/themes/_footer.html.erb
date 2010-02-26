@@ -1,3 +1,10 @@
 <div id="footer">
-	Made with <%= link_to('AppMark.it', 'http://appmark.it', :target => :new) %>
+	<div class="left">
+		<% @app.links.each do |link| %>
+			<%= link_to(link.title, link.url, :class => 'mr15') %>
+		<% end %>
+	</div>
+	<div class="right">
+		Made with <%= link_to('AppMark.it', 'http://appmark.it', :target => :new) %>
+	</div>
 </div>

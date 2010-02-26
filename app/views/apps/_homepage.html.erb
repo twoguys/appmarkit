@@ -1,14 +1,14 @@
 <div class="light-grey-background p10 mb20">
 	<h2 class="homepage mb10">Homepage</h2>
 	<div class="mb10">
-		We've setup a homepage for your app, you can see it at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %><br/>
+		We've setup a homepage for your app at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %><br/>
 	</div>
 	<div class="border-bottom">
 		<h3>1. Make sure your app's info is correct.</h3>
 		<div class="indented">
 			<%= link_to("Edit app info", edit_app_path(@app)) %>
-			<div class="weak">
-				<%= link_to("Preview your homepage", preview_app_path(@app)) %> (We cache your homepage every 5 minutes to save our servers some work, so this will show your changes right away.)
+			<div class="weak mt10">
+				NOTE: We cache your homepage for 5 minutes to save our servers some work, so to see changes you just made, <%= link_to("preview your homepage here", preview_app_path(@app)) %>.
 			</div>
 		</div>
 	</div>

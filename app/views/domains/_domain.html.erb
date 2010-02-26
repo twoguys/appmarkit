@@ -1,1 +1,1 @@
-<li id="<%= dom_id(domain) %>"><%= domain.name %> <%= link_to_remote "[x]", :url => [@app, domain], :method => :delete %></li>
+<li id="<%= dom_id(domain) %>"><%= domain.name %> <%= link_to_remote "remove", :url => [@app, domain], :method => :delete, :html => {:class => 'icon trash ml15'} %></li>

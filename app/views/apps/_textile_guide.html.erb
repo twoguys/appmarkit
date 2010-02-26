@@ -1,0 +1,67 @@
+<%= link_to('Show formatting guide', '#', :id => 'formatting-guide-link') %>
+<div id="formatting-guide" class="mt10" style="display: none;">
+  <table>
+    <tr>
+      <th>To get this effect&hellip;</th>
+      <th>Type this&hellip;</th>
+    </tr>
+    <tr>
+      <td>
+        <strong>Bold phrase</strong>
+      </td>
+      <td>
+        *Bold phrase*
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <span style="font-style: italic;">Italic phrase</span>
+      </td>
+      <td>
+        _Italic phrase_
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ul class="disc-list">
+          <li>Bulleted list</li>
+          <li>Bulleted list</li>
+        </ul>
+      </td>
+      <td>
+          * Bulleted list<br />
+          * Bulleted list
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <ol class="number-list">
+          <li>Numbered list</li>
+          <li>Numbered list</li>
+        </ol>
+      </td>
+      <td>
+          # Numbered list<br />
+          # Numbered list
+      </td>
+    </tr>
+    <tr>
+      <td><h1>Big header</h1></td>
+      <td>h1. Big header</td>
+    </tr>
+    <tr>
+      <td><h2>Normal header</h2></td>
+      <td>h2. Normal header</td>
+    </tr>
+  </table>
+</div>
+
+<script type="text/javascript">
+	$('#formatting-guide-link').toggle(function() {
+		$('#formatting-guide').slideDown();
+		$('#formatting-guide-link').text('Hide formatting guide');
+	}, function() {
+		$('#formatting-guide').slideUp();
+		$('#formatting-guide-link').text('Show formatting guide');
+	});
+</script>

@@ -20,7 +20,11 @@
 	<%- end -%>
 	
   <div class="mt10">
-		<%= f.submit "Submit", :class => 'button' %>
-		<%= "or #{link_to('Cancel', welcome_path)}" if @user.new_record? %>
+		<% if @user.new_record? %>
+			<%= f.submit "I accept. Create my account.", :class => 'button' %>
+		<% else %>
+			<%= f.submit "Save" %>
+			<%= "or #{link_to('Cancel', welcome_path)}" %>
+		<% end %>
 	</div>
 <% end %>
