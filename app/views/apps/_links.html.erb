@@ -6,3 +6,7 @@
 <ul id="app-links">
 	<%= render @app.links %>
 </ul>
+
+<% content_for :javascript do %>
+	<%= sortable_element 'app-links', :url => ['sort', @app, 'links'], :complete => visual_effect(:highlight, 'app-links') %>
+<%- end -%>

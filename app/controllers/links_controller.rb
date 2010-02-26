@@ -18,6 +18,13 @@ class LinksController < ApplicationController
     flash[:notice] = "Link removed"
   end
   
+  def sort
+    @app.links.each do |link|
+      link.position = params['app-links'].index(link.id.to_s) + 1
+      link.save
+    end
+    render :nothing => true
+  end
   
   private
   
