@@ -10,14 +10,12 @@ class LinksController < ApplicationController
     else
       flash[:error] = "Error adding link"
     end
-    redirect_to @app
   end
   
   def destroy
     @link = @app.links.find(params[:id])
     @link.destroy
     flash[:notice] = "Link removed"
-    redirect_to @app
   end
   
   

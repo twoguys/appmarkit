@@ -1,0 +1,1 @@
+page.insert_html :bottom, 'app-links', :partial => 'link', :object => @link
