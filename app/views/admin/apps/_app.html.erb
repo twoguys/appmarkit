@@ -1,5 +1,5 @@
 <li class="app">
-	<a href="<%= app_path(app) %>">
+	<a href="<%= root_url(app.itunes_url_opts) %>" target="new">
 	<%= image_tag(app.small_artwork_url) if app.small_artwork_url %>
 	<span class="name"><%= app.name %></span>
 	</a>

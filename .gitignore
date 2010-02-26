@@ -6,4 +6,5 @@ tmp/restart.txt
 db/*.sqlite3
 config/environment.yml
 coverage
+vendor/plugins/rails_rcov
 .rake_tasks

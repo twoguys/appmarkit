@@ -56,7 +56,7 @@ class App < ActiveRecord::Base
   end
   
   def affiliate_url
-    "http://click.linksynergy.com/fs-bin/stat?id=UjB6GWcy1A8&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=#{self.itunes_url}&partnerId=30"
+    "http://click.linksynergy.com/fs-bin/stat?id=UjB6GWcy1A8&offerid=146261&type=3&subid=0&tmpid=1826&RD_PARM1=#{self.itunes_url}&partnerId=30&u1=#{self.id}"
   end
   
   def itunes_url_opts
