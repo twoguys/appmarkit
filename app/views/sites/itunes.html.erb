@@ -6,7 +6,7 @@
 		<%= google_analytics(@app.google_analytics_id) %>
 		<script type="text/javascript">
 			$(document).ready(function() {
-				window.location.replace("<%= @app.affiliate_url %>");
+				setTimeout("window.location.replace('<%= @app.affiliate_url %>')",1000);
 			});
 		</script>
 	</head>

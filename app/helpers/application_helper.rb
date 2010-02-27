@@ -19,14 +19,16 @@ module ApplicationHelper
       </script>
       <script type="text/javascript">
         try {
-          var firstTracker = _gat._getTracker("#{google_analytics_id}");
-          firstTracker._initData();
-          firstTracker._trackPageview();
-          var secondTracker = _gat._getTracker("UA-13182964-1");
-          secondTracker._setDomainName("none");
-          secondTracker._setAllowLinker(true);
-          secondTracker._initData();
-          secondTracker._trackPageview();
+          var pageTracker = _gat._getTracker("#{google_analytics_id}");
+    			pageTracker._trackPageview();
+          //var firstTracker = _gat._getTracker("#{google_analytics_id}");
+          //firstTracker._initData();
+          //firstTracker._trackPageview();
+          //var secondTracker = _gat._getTracker("UA-13182964-1");
+          //secondTracker._setDomainName("none");
+          //secondTracker._setAllowLinker(true);
+          //secondTracker._initData();
+          //secondTracker._trackPageview();
         } catch(err) {}
       </script>
       EOF
