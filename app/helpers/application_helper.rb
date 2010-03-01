@@ -1,7 +1,7 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   def liquid(app)
-    Liquid::Template.parse(app.theme.template).render 'app' => @app,
+    Liquid::Template.parse(app.theme.template).render 'app' => app,
       'analytics' => google_analytics(app.google_analytics_id),
       'footer' => template_footer
   end
@@ -11,11 +11,11 @@ module ApplicationHelper
   end
   
   def google_analytics(google_analytics_id)
-    if google_analytics_id
+    if !google_analytics_id.blank?
       <<-EOF
       <script type="text/javascript">
         var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-        document.write(unescape("%3Cscript src=’" + gaJsHost + "google-analytics.com/ga.js’ type=’text/javascript’%3E%3C/script%3E"));
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
       </script>
       <script type="text/javascript">
         try {
