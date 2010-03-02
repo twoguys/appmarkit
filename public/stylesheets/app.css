@@ -8,7 +8,7 @@ html, body {
 html, body, #wrap { height: 100%; }
 body > #wrap { height: auto; min-height: 100%; }
 #main { padding-bottom: 120px; }
-#footer { position: relative; margin-top: -101px; height: 50px; clear: both; }
+#footer { position: relative; margin-top: -101px; height: 100px; clear: both; }
 .clearfix:after {content: ".";
 	display: block;
 	height: 0;
@@ -210,10 +210,9 @@ div.pagination .disabled { color: #aaa; border: none; }
   border-top: 1px solid #ccc;
   text-align: center;
   width: 100%;
-  padding: 20px 0;
   background-color: #eee;
 }
-#footer_insides { width: 800px; margin: 0 auto; color: #666; font-size: 12px; }
+#footer-insides { width: 960px; margin: 0 auto; color: #666; font-size: 12px; padding: 20px 0; }
 #footer_insides td { width: 250px; text-align: left; vertical-align: top; padding: 0 15px; }
 #footer h3 { color: #555; margin: 0 0 10px 0; padding: 0 0 5px 0; border-bottom: 1px dotted #444; }
 
