@@ -5,7 +5,7 @@ body {
   font-size: 14px;
 }
 a { color: #75588a; }
-#insides { width: 450px; margin: 30px auto; position: relative; }
+#insides { width: 510px; margin: 30px auto; position: relative; }
 #logo { font-size: 2.5em; color: #000; margin: 0 0 30px; height: 55px; }
 #logo .icon { border: 1px solid #ccc; padding: 5px; background-color: #ddd; width: 57px; height: 57px; float: left; }
 #logo img { width: 57px; height: 57px; }
