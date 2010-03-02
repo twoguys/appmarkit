@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   
   def new
     nav(:signup)
+    session[:new_user_redirect] = params[:redirect_to] if params[:redirect_to]
     @user = User.new
   end
   
@@ -11,7 +12,12 @@ class UsersController < ApplicationController
     @user = User.new(params[:user])
     if verify_recaptcha(:model => @user, :message => "The reCAPTCHA was incorrect, please try again") && @user.save
       flash[:notice] = "You account has been created"
-      redirect_to apps_path
+      if session[:new_user_redirect]
+        redirect_to session[:new_user_redirect]
+        session[:new_user_redirect] = nil
+      else
+        redirect_to apps_path
+      end
     else
       render :action => 'new'
     end
