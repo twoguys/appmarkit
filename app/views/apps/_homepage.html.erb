@@ -1,7 +1,25 @@
 <div class="light-grey-background p10 mb20">
 	<h2 class="homepage mb10">Homepage</h2>
+
+	<% if @app.no_homepage %>
+
+	You have chosen not to have a homepage.
+	<% form_for @app, :html => {:id => 'undo-homepage-form', :class => 'inline'} do |form| %>
+		<%= form.hidden_field(:no_homepage, :value => '0') %>
+		<%= link_to_function("Undo", "$('#undo-homepage-form').submit();") %>
+	<% end %>
+
+	<% else %>
+
 	<div class="mb10">
-		We've setup a homepage for your app at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %><br/>
+		We've setup a homepage for your app at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %>
+		<div class="weak mt5">
+			Decided you don't need a homepage?
+			<% form_for @app, :html => {:id => 'undo-homepage-form', :class => 'inline'} do |form| %>
+				<%= form.hidden_field(:no_homepage, :value => '1') %>
+				<%= link_to_function("Click here", "$('#undo-homepage-form').submit();") %>
+			<% end %>
+		</div>
 	</div>
 	<div class="border-bottom">
 		<h3>1. Make sure your app's info is correct.</h3>
@@ -33,5 +51,6 @@
 			</div>
 		</div>
 	</div>
-	<%#= link_to("Preview Site", preview_app_path(@app)) %>
+	
+	<% end %>
 </div>

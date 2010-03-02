@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100224163619) do
+ActiveRecord::Schema.define(:version => 20100302041644) do
 
   create_table "apps", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20100224163619) do
     t.string   "large_artwork_url"
     t.string   "itunes_id"
     t.string   "theme_name"
+    t.boolean  "no_homepage",         :default => false
   end
 
   create_table "domains", :force => true do |t|
