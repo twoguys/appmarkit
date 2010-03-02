@@ -1,7 +1,7 @@
 class Admin::UsersController < Admin::BaseController
   
   def index
-    @users = User.all
+    @users = User.find(:all, :order => 'created_at ASC')
   end
   
   def show
