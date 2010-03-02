@@ -1,0 +1,43 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<html>
+	<head>
+		<title>
+			{{app.name}}
+		</title>
+		<link rel="shortcut icon" href="{{app.small_artwork_url}}" />
+		<link href="/stylesheets/themes.css" media="screen" rel="stylesheet" type="text/css">
+		<link href="/themes/blue_grey/stylesheets/app.css" media="screen" rel="stylesheet" type="text/css">
+		<script src="/javascripts/jquery-1.4.1.min.js" type="text/javascript"></script>
+		<script src="/javascripts/jquery.cycle.js" type="text/javascript"></script>
+		<script type="text/javascript">
+			$('#screenshots-insides').cycle({
+				fx: 'fade' // choose your transition type, ex: fade, scrollUp, shuffle, etc...
+			});
+		</script>
+	</head>
+	<body>
+		<div id="logo">
+			<div class="name">{{app.name}}</div>
+		</div>
+		<div id="insides">
+			<div id="screenshots">
+				<ul id="screenshots-insides">
+					{% for screenshot in app.screenshots %}
+					<li class="screenshot">
+						<img src="{{screenshot}}" alt="screenshot"/>
+					</li>
+					{% endfor %}
+				</ul>
+				<img id="icon" src="{{app.small_artwork_url}}" alt="icon">
+				<div id="app-store-link">
+					<a href="/itunes"></a>
+				</div>
+			</div>
+			<div id="description">
+				{{app.print_description}}
+			</div>
+		</div>
+		{{footer}}
+		{{analytics}}
+	</body>
+</html>
