@@ -2,33 +2,35 @@
 	<%= image_tag(@app.small_artwork_url) %>
 </div>
 
-<div class="left w400 light-grey-background p10">
+<div class="left w400 light-grey-background">
 <% form_for @app do |f| %>
   <%= f.error_messages %>
 
 	<div class="border-bottom">
-		<%= f.label :name, 'Name', :class => 'mt0' %>
+		<%= f.label :name, 'Choose a <strong>name</strong>', :class => 'mt0' %>
 	 	<%= f.text_field :name %>
 	</div>
 	
 	<div class="border-bottom">
-		<%= f.label :subdomain %>
+		<%= f.label :subdomain, 'Choose a <strong>subdomain</strong>' %>
 		http://<%= f.text_field :subdomain, :class => 'small skinny' %>.appmark.it
 	</div>
 
-	<div class="border-bottom">
-		<%= f.label :description %>
+	<div id="app-description-section" class="border-bottom">
+		<%= f.label :description, '<strong>Describe</strong> your app' %>
+		<small class="block weak">Don't be too wordy</small>
 		<%= f.text_area :description, :class => 'tall' %>
 		
 		<%= render 'textile_guide' %>
 	</div>
 
 	<%= hidden_field_tag(:itunes_id, @itunes_id) %>
+	<%= f.hidden_field(:no_homepage) %>
 	
   <div>
 		<%= f.submit("Save", :class => 'button') %>
 		<% if @app.new_record? %>
-			or <%= link_to('search again', search_apps_path) %>
+			or <%= link_to('Back to search', search_apps_path) %>
 		<% else %>
 			or <%= link_to('Cancel', @app) %>
 		<% end %>
@@ -37,7 +39,7 @@
 </div>
 
 
-<div class="w400 left light-grey-background p10 ml15">
+<div id="app-artwork-section" class="w400 left light-grey-background ml15">
 	<div class="mb10 strong">Artwork</div>
 	<%= image_tag(@app.large_artwork_url, :class => 'large-artwork') %>
 	

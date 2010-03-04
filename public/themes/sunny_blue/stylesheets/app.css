@@ -4,8 +4,8 @@ body {
   font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, sans-serif;
   font-size: 14px;
 }
-a { color: #75588a; }
-#insides { width: 800px; height: 800px; margin: 30px auto 0; position: relative; }
+a { color: #004e65; }
+#insides { width: 800px; min-height: 600px; margin: 30px auto 0; position: relative; }
 #logo { font-size: 2.5em; color: #002b47; margin: 0 0 30px; height: 55px; }
 #logo .icon { padding: 5px; width: 57px; height: 57px; float: left; }
 #logo img { width: 57px; height: 57px; }

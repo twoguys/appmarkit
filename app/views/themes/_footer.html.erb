@@ -1,7 +1,7 @@
 <div id="footer">
 	<div class="left">
 		<% @app.links.each do |link| %>
-			<%= link_to(link.title, link.url, :class => 'mr15') %>
+			<%= link_to(link.title, link.url, :class => 'mr15', :target => :new) %>
 		<% end %>
 	</div>
 	<div class="right">

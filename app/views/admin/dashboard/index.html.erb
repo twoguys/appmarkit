@@ -1,17 +1,20 @@
-<h1>Dashboard</h1>
-<%= render :partial => 'nav' %>
-
 <ul class="horizontal mt20 mb20">
 	<li>
-		<%= image_tag('/images/icons/user.png') %>
-		<%= User.count %> users
+		<a href="<%= admin_users_path %>">
+			<%= image_tag('/images/icons/user.png') %>
+			<%= User.count %> users
+		</a>
 	</li>
 	<li>
-		<%= image_tag('/images/icons/iphone.png') %>
-		<%= App.count %> apps
+		<a href="<%= admin_apps_path %>">
+			<%= image_tag('/images/icons/iphone.png') %>
+			<%= App.count %> apps
+		</a>
 	</li>
 	<li>
-		<%= image_tag('/images/icons/3x3_grid.png') %>
-		<%= Theme.count %> themes
+		<a href="<%= admin_themes_path %>">
+			<%= image_tag('/images/icons/3x3_grid.png') %>
+			<%= Theme.count %> themes
+		</a>
 	</li>
 </ul>

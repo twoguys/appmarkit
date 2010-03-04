@@ -35,7 +35,7 @@ class AppsController < ApplicationController
       redirect_to @app
     else
       flash[:error] = "Error, please try again"
-      render :action => 'edit'
+      render :action => 'new'
     end
   end
   

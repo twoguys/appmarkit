@@ -1,0 +1,53 @@
+html, body {
+  background-color: #fff;
+  color: #aaa;
+  font-family: HelveticaNeue-Light, 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+}
+a { color: #006FBB; }
+#logo { width: 100%; background-color: #006FBB; border-bottom: 5px solid #005188; }
+#logo .name { width: 800px; margin: 0 auto; padding: 10px 0; font-size: 2em; color: #fff; }
+#insides { width: 800px; min-height: 400px; margin: 30px auto 0; position: relative; }
+#description {
+  font-size: 1.2em;
+  padding: 5px 20px;
+  background-color: #181818;
+  color: #999;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  margin-top: 20px;
+}
+#description a { color: #fff; }
+#screenshots {
+  margin: 0 auto;
+  width: 514px;
+  height: 293px;
+  background: transparent url(../../../images/iphone-sideways.png) no-repeat 0 0;
+  position: relative;
+}
+#screenshots-insides { width: 294px; height: 195px; position: absolute; top: 40px; left: 108px; padding: 0; margin: 0; }
+.screenshot, .screenshot img { width: 294px; height: 195px; }
+.screenshot { list-style-type: none; }
+#screenshots #icon { position: absolute; bottom: 0; left: 0; width: 57px; height: 57px; border: 3px solid #fff; }
+
+#app-store-link { width: 800px; padding: 10px 0 0;}
+#app-store-link a {
+  display: block;
+  position: absolute;
+  bottom: 0; right: -70px;
+  background: transparent url(../../../images/app_store.png) no-repeat 0 0;
+  width: 160px;
+  height: 79px;
+}
+
+#footer {
+  background-color: #eee;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  height: 30px;
+  padding: 10px 10px 0;
+  width: 780px;
+  margin-top: 10px;
+}

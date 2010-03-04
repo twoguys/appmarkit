@@ -1,11 +1,38 @@
-<h1>Adding a new app</h1>
 <%= link_to('Back to search', search_apps_path, :class => 'icon back') %>
 
-<div>
-	<div class="hint mb20">
-		We've pulled information about your app from the iTunes store.
-		Make any changes you'd like and press 'Save'.
+<div class="light-grey-background p10 mt10">
+	<h2 class="border-bottom"><strong>Step 3: Save</strong> your app</h2>
+	<div class="hint medium">
+		Create a homepage for your app in just seconds. We've pulled your info from iTunes to help out.
 	</div>
+	<div id="analytics-off" class="pl25 mb20 weak">
+		Don't need a homepage?  Just want to use Google Analytics? <%= link_to_function("Click here", "analytics_off()") %>
+	</div>
+	<div id="analytics-on" class="pl25 mb20" style="display:none;">
+		You have chosen not to create a homepage for your app. <%= link_to_function("Undo", "analytics_on()") %>	
+	</div>
+
+	<div class="clear">
+		<%= render :partial => 'form' %>
+	</div>
+	<div class="clear"></div>
 </div>
 
-<%= render :partial => 'form' %>
+<script type="text/javascript">
+	function analytics_off() {
+		$('#app-description-section').fadeOut();
+		$('#app-artwork-section').fadeOut();
+		$('#app_no_homepage').val("true");
+		$('#analytics-off').hide();
+		$('#analytics-on').show();
+		return false;
+	}
+	function analytics_on() {
+		$('#app-description-section').fadeIn();
+		$('#app-artwork-section').fadeIn();
+		$('#app_no_homepage').val("false");
+		$('#analytics-off').show();
+		$('#analytics-on').hide();
+		return false;
+	}
+</script>
