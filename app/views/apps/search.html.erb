@@ -28,7 +28,7 @@
 					<%= link_to("Choose", new_app_path(:id => strip_app_id(app.track_view_url)), :class => 'button') if current_user %>
 					<% if !current_user %>
 						<%= link_to("Sign up", signup_path(:redirect_to => new_app_path(:id => strip_app_id(app.track_view_url))), :class => 'button') %>
-						<div class="small">to claim this app</div>
+						<div class="small mt5">to claim this app</div>
 					<% end %>
 				</td>
 				<td><%= image_tag app.artwork_url60 %></td>
