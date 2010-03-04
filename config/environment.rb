@@ -23,7 +23,7 @@ Rails::Initializer.run do |config|
   config.gem "paperclip",            :version => "2.3.1.1"
   config.gem "httparty",             :version => "0.5.2"
   config.gem "authlogic",            :version => "2.1.3"
-  config.gem "heroku",               :version => "1.8.1"
+  config.gem "heroku",               :version => "1.8.2"
   config.gem "RedCloth",             :version => "4.2.2"
   config.gem "acts-as-list",         :version => "0.1.2",       :lib => "acts_as_list"
   config.gem "recaptcha",            :version => "0.2.3",       :lib => "recaptcha/rails"

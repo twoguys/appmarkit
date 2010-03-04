@@ -3,7 +3,7 @@ class Admin::AppsController < Admin::BaseController
   skip_before_filter :admin_required, :only => :install
   
   def index
-    @apps = App.all
+    @apps = App.find(:all, :order => "created_at DESC")
   end
   
   def show
