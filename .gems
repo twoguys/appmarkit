@@ -1,3 +1,4 @@
+rails --version 2.3.5
 will_paginate --version 2.3.12
 liquid --version 2.0.0
 subdomain-fu --version 0.5.4
