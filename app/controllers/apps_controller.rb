@@ -23,6 +23,8 @@ class AppsController < ApplicationController
       flash[:error] = "Invalid App, please try your search again"
       redirect_to search_apps_path
     end
+    rescue Timeout::Error => e
+      flash[:error] = "iTunes is taking too long to respond, please try again in a few minutes"
   end
   
   def create
@@ -63,6 +65,8 @@ class AppsController < ApplicationController
       @app  = App.new(:name => name)
       @apps = ItunesStore.find(:all, :term => name)
     end
+    rescue Timeout::Error => e
+      flash[:error] = "iTunes is taking too long to respond, please try again in a few minutes"
   end
   
   def themes
