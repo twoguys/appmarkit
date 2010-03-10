@@ -1,16 +1,18 @@
-<% form_remote_for :link, Link.new, :url => [@app, 'links'], :html => {:id => 'add-link-form'} do |f| %>
-	<div id="app-link-errors"></div>
-	<div class="small">
-		Link text: <%= f.text_field :title, :class => 'small skinny' %>
-		Link URL: <%= f.text_field :url, :class => 'small' %>
-		<%= f.submit "Add Link" %>
-	</div>
-<%- end -%>
+<div class="light-grey-border p10">
+	<% form_remote_for :link, Link.new, :url => [@app, 'links'], :html => {:id => 'add-link-form'} do |f| %>
+		<div id="app-link-errors"></div>
+		<div class="small">
+			Link text: <%= f.text_field :title, :class => 'small skinny' %>
+			Link URL: <%= f.text_field :url, :class => 'small' %>
+			<%= f.submit "Add Link" %>
+		</div>
+	<%- end -%>
 
-<ul id="app-links">
-	<%= render @app.links %>
-</ul>
+	<ul id="app-links">
+		<%= render @app.links %>
+	</ul>
 
-<% content_for :javascript do %>
-	<%= sortable_element 'app-links', :url => ['sort', @app, 'links'], :complete => visual_effect(:highlight, 'app-links') %>
-<%- end -%>
+	<% content_for :javascript do %>
+		<%= sortable_element 'app-links', :url => ['sort', @app, 'links'], :complete => visual_effect(:highlight, 'app-links') %>
+	<%- end -%>
+</div>

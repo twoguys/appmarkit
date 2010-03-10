@@ -160,9 +160,22 @@ a.button { text-decoration: none; font-size: 1.1em; }
 li.app a { display: block; height: 59px; border: 1px solid #ddd; padding: 5px; background-color: #eee; margin: 0 0 10px; }
 li.app img { float: left; height: 59px; margin: 0 10px 0 0; }
 li.app .name { height: 59px; line-height: 59px; vertical-align: middle; float: left; overflow: hidden; font-size: 1.3em; }
-.analytics { background: transparent url(../images/chart_line.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
-.homepage { background: transparent url(../images/home.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
-.domains { background: transparent url(../images/globe.png) no-repeat; padding: 6px 0 0 40px; height: 32px; border-bottom: 1px dotted #ccc; }
+.analytics { background: transparent url(../images/chart-line-sexy.png) no-repeat; padding: 5px 0 0 40px; height: 32px; }
+.homepage { background: transparent url(../images/home-sexy.png) no-repeat; padding: 6px 0 0 40px; height: 32px; }
+.domains { background: transparent url(../images/globe-sexy.png) no-repeat; padding: 6px 0 0 40px; height: 32px; }
+.active .analytics { background: transparent url(../images/chart-line-sexy-active.png) no-repeat; }
+.active .homepage { background: transparent url(../images/home-sexy-active.png) no-repeat; }
+.active .domains { background: transparent url(../images/globe-sexy-active.png) no-repeat; }
+.menu-header { background: transparent url(../images/menu-header-bg.png) no-repeat; height: 76px; width: 900px; padding: 0 30px; }
+.menu-header .action { float: left; width: 170px; padding-top: 24px; height: 52px; text-align: center; cursor: pointer; color: #555; }
+.menu-header .action h2 { margin: 0 auto; display: inline-block; }
+.menu-header .active { background: transparent url(../images/menu-active-bg.png) no-repeat 50% 0; color: #000; }
+.action:hover {
+	color: #000;
+  -webkit-transition-duration: 0.5s;
+  -webkit-transition-property: color;
+  -webkit-transition-timing-function: ease-in-out;
+}
 
 /* Themes */
 ul.themes { margin: 0 auto; }
