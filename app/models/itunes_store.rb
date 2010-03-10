@@ -7,7 +7,7 @@ class ItunesStore
   end
   
   def self.find_apps(term)
-    res = get('http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsSearch?parameterkeyvalue', :query => { :media => 'software', :term => term })
+    res = get('http://ax.phobos.apple.com.edgesuite.net/WebObjects/MZStoreServices.woa/wa/wsSearch', :query => { :media => 'software', :term => term })
     res['results'].collect { |app| app.to_struct("ItunesApp") }
   end
   
