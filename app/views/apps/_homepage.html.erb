@@ -1,5 +1,4 @@
 <div class="light-grey-background p10 mb20">
-	<h2 class="homepage mb10">Homepage</h2>
 
 	<% if @app.no_homepage %>
 
@@ -7,47 +6,55 @@
 	<% form_for @app, :html => {:id => 'undo-homepage-form', :class => 'inline'} do |form| %>
 		<%= form.hidden_field(:no_homepage, :value => '0') %>
 		<%= link_to_function("Undo", "$('#undo-homepage-form').submit();") %>
-	<% end %>
+	<% end %>	
+	<div class="mt10">
+		Your can still get analytics on your app's iTunes Link at: <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
+	</div>
 
 	<% else %>
 
 	<div class="mb10">
-		We've setup a homepage for your app at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %>
-		<div class="weak mt5">
+		<div class="medium">
+			We've setup a homepage for your app at: <%= link_to(root_url(@app.itunes_url_opts), root_url(@app.itunes_url_opts)) %>
+		</div>
+		<div class="weak mt5 small">
 			Decided you don't need a homepage?
 			<% form_for @app, :html => {:id => 'undo-homepage-form', :class => 'inline'} do |form| %>
 				<%= form.hidden_field(:no_homepage, :value => '1') %>
 				<%= link_to_function("Click here", "$('#undo-homepage-form').submit();") %>
 			<% end %>
 		</div>
-	</div>
-	<div class="border-bottom">
-		<h3>1. Make sure your app's info is correct.</h3>
-		<div class="indented">
-			<%= link_to("Edit app info", edit_app_path(@app)) %>
-			<div class="weak mt10">
-				NOTE: We cache your homepage for 5 minutes to save our servers some work, so to see changes you just made, <%= link_to("preview your homepage here", preview_app_path(@app)) %>.
-			</div>
+		<div class="medium border-bottom mt10">
+			Your can send people to your app's iTunes Link with: <%= link_to(itunes_url(@app.itunes_url_opts), itunes_url(@app.itunes_url_opts)) %> <%= clippy(itunes_url(@app.itunes_url_opts), "#eeeeee") %>
 		</div>
 	</div>
 	<div class="border-bottom">
-		<h3>2. Choose your theme.</h3>
+		<h3>1. Choose your theme.</h3>
 		<div class="indented">
 			Your current theme is "<%= @app.theme.name %>". 
 			<%= link_to("Choose a different theme", themes_app_path(@app)) %>
 			<div class="mt5">
 				<%= image_tag(@app.theme.screenshot_url("large"), :class => 'light-grey-border') %>
 			</div>
+			<div class="weak mt10">
+				NOTE: We cache your homepage for 5 minutes to save our servers some work, so to see changes you just made, <%= link_to("preview your homepage here", preview_app_path(@app)) %>.
+			</div>
 		</div>
 	</div>
 	<div class="border-bottom">
-		<div class="mb10">
-			<h3>3. Customize your homepage</h3>
+		<div class="mb5">
+			<h3>2. Customize your homepage</h3>
 		</div>
 		<div class="indented">
-			<strong class="block mb5">Add links to the bottom of your homepage</strong>
+			<div class="mb5 strong">
+				a) <%= link_to("Edit your app info", edit_app_path(@app)) %>
+			</div>
+			<strong class="block mb5">b) Add links to the bottom of your homepage</strong>
 			<div>
 				<%= render :partial => 'links' %>
+			</div>
+			<div class="weak mt10">
+				NOTE: We cache your homepage for 5 minutes to save our servers some work, so to see changes you just made, <%= link_to("preview your homepage here", preview_app_path(@app)) %>.
 			</div>
 		</div>
 	</div>

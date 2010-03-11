@@ -7,8 +7,29 @@
 	<%= link_to('Refresh screenshots from iTunes', @app, :class => 'icon upgrade') %>
 </div>
 
-<%= render 'apps/analytics' %>
+<div class="menu-header">
+	<div id="homepage-action" class="action active">
+		<h2 class="homepage">Homepage</h2>
+	</div>
+	<div id="analytics-action" class="action">
+		<h2 class="analytics">Analytics</h2>
+	</div>
+	<div id="domains-action" class="action">
+		<h2 class="domains">Domains</h2>
+	</div>
+</div>
 
-<%= render 'apps/homepage' %>
+<div class="mt10">
 
-<%= render 'apps/domains' %>
+	<div id="homepage-container">
+		<%= render 'apps/homepage' %>
+	</div>
+
+	<div id="analytics-container" style="display:none;">
+		<%= render 'apps/analytics' %>
+	</div>
+
+	<div id="domains-container" style="display:none;">
+		<%= render 'apps/domains' %>
+	</div>
+</div>
