@@ -4,6 +4,7 @@
 <div class="mb10">
 	<%= link_to('Back to my apps', apps_path, :class => 'icon back mr15') %>
 	<%= link_to('Delete this app', @app, :confirm => 'Are you sure you want to delete this app?', :method => :delete, :class => 'icon trash') %>
+	<%= link_to('Refresh screenshots from iTunes', @app, :class => 'icon upgrade') %>
 </div>
 
 <%= render 'apps/analytics' %>

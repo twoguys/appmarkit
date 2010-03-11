@@ -2,7 +2,7 @@ class AppsController < ApplicationController
   
   before_filter { |c| c.nav(:apps) }
   before_filter :login_required,  :except => [:search, :demo]
-  before_filter :find_app,        :only   => [:edit, :update, :themes, :preview]
+  before_filter :find_app,        :only   => [:edit, :update, :themes, :preview, :refresh]
   
   def index
     @apps = current_user.apps
@@ -87,6 +87,12 @@ class AppsController < ApplicationController
     @app.from_itunes(itunes)
     
     render :action => 'preview', :layout => false
+  end
+  
+  def refresh
+    @app.refresh_itunes_images!
+    flash[:notice] = "Refresh screenshots from iTunes"
+    redirect_to @app
   end
 
   private

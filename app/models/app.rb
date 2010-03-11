@@ -47,7 +47,7 @@ class App < ActiveRecord::Base
     self.author             = itunes.artist_name
   end
   
-  def refresh_itunes_images
+  def refresh_itunes_images!
     itunes = ItunesStore.find self.itunes_id
     self.small_artwork_url  = itunes.artwork_url60
     self.large_artwork_url  = itunes.artwork_url100
