@@ -46,7 +46,7 @@ class AppsController < ApplicationController
   
   def update
     @app.update_attributes(params[:app])
-    redirect_to @app
+    redirect_to ['edit', @app]
   end
   
   def destroy

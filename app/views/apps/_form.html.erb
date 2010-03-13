@@ -23,6 +23,10 @@
 		
 		<%= render 'textile_guide' %>
 	</div>
+	
+	<div id="app-preview-section" class="border-bottom">
+		<%= link_to "Preview", ['preview', @app], :target => "new" %>
+	</div>
 
 	<%= hidden_field_tag(:itunes_id, @itunes_id) %>
 	<%= f.hidden_field(:no_homepage) %>
