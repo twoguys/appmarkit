@@ -15,6 +15,11 @@
 </head>
 
 <body>
+	<!-- ClickTale Top part -->
+	<script type="text/javascript">
+	var WRInitTime=(new Date()).getTime();
+	</script>
+	<!-- ClickTale end of Top part -->
 	<div id="ie_pwnage">
 		Please upgrade to one of these <strong>free</strong> browsers:<br/>
 		<div>- <%= link_to('Firefox', 'http://getfirefox.com') %></div>
@@ -85,5 +90,16 @@
 			pageTracker._trackPageview();
 		} catch(err) {}
 	</script>
+	<!-- ClickTale Bottom part -->
+	<div id="ClickTaleDiv" style="display: none;"></div>
+	<script type="text/javascript">
+	if(document.location.protocol!='https:')
+	  document.write(unescape("%3Cscript%20src='http://s.clicktale.net/WRb.js'%20type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	if(typeof ClickTale=='function') ClickTale(309,1,"www03");
+	</script>
+	<!-- ClickTale end of Bottom part -->
+	
 </body>	
 </html>
