@@ -167,7 +167,7 @@ li.app .name { height: 59px; line-height: 59px; vertical-align: middle; float: l
 .active .homepage { background: transparent url(../images/home-sexy-active.png) no-repeat; }
 .active .domains { background: transparent url(../images/globe-sexy-active.png) no-repeat; }
 .menu-header { background: transparent url(../images/menu-header-bg.png) no-repeat; height: 76px; width: 900px; padding: 0 30px; }
-.menu-header .action { float: left; width: 170px; padding-top: 24px; height: 52px; text-align: center; cursor: pointer; color: #555; }
+.menu-header .action { float: left; width: 159px; padding-top: 24px; height: 52px; text-align: center; cursor: pointer; color: #555; }
 .menu-header .action h2 { margin: 0 auto; display: inline-block; }
 .menu-header .active { background: transparent url(../images/menu-active-bg.png) no-repeat 50% 0; color: #000; }
 .action:hover {
